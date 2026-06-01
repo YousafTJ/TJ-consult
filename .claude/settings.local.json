@@ -5,7 +5,9 @@
       "mcp__claude-flow__swarm_status",
       "mcp__claude-flow__memory_store",
       "Bash(where gh *)",
-      "Bash(git -C \"c:\\\\Users\\\\PC\\\\AI-OS\\\\projects\\\\TJ-consult\" status)"
+      "Bash(git -C \"c:\\\\Users\\\\PC\\\\AI-OS\\\\projects\\\\TJ-consult\" status)",
+      "Bash(winget install *)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\\\\\" -ErrorAction SilentlyContinue; Get-ChildItem \"$env:LOCALAPPDATA\\\\Programs\\\\GitHub CLI\\\\\" -ErrorAction SilentlyContinue; where.exe gh 2>&1)"
     ]
   }
 }
