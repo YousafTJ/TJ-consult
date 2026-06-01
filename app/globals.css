@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --orange: #F97316;
+  --orange-light: #FB923C;
+  --orange-dark: #EA580C;
+  --dark: #111827;
+  --gray-mid: #6B7280;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #111827;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 inline-flex items-center gap-2 shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 inline-flex items-center gap-2;
+  }
+  .btn-outline-orange {
+    @apply border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 inline-flex items-center gap-2;
+  }
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  .card-base {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 p-6;
+  }
+  .gradient-orange {
+    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  }
+  .text-gradient-orange {
+    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-bg {
+    background: linear-gradient(135deg, #FAFAFA 0%, #FFF7ED 50%, #FFFFFF 100%);
+  }
+  .dark-section {
+    @apply bg-gray-900 text-white;
+  }
+  .orange-dot {
+    @apply w-2 h-2 bg-orange-500 rounded-full inline-block;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #F97316;
+  border-radius: 3px;
+}
+
+/* Service card (uiverse.io adapted) */
+.service-card {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(240, 15%, 9%);
+  --paragraph: hsl(0, 0%, 75%);
+  --line: hsl(240, 9%, 20%);
+  --primary: #F97316;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: hsla(240, 15%, 9%, 1);
+  background-image:
+    radial-gradient(at 88% 40%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsl(24, 25%, 13%) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsl(24, 20%, 11%) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsl(24, 15%, 10%) 0px, transparent 85%);
+  border-radius: 1rem;
+  box-shadow: 0px -16px 24px 0px rgba(249, 115, 22, 0.04) inset;
+  overflow: hidden;
+}
+
+.service-card .card__border {
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background-image: linear-gradient(0deg, #F97316 -50%, hsl(0, 0%, 40%) 100%);
+  border-radius: 1rem;
+}
+
+.service-card .card__border::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 200%;
+  height: 10rem;
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    rgba(249, 115, 22, 0.5) 40%,
+    rgba(249, 115, 22, 0.5) 60%,
+    hsla(0, 0%, 40%, 0) 100%
+  );
+  animation: service-card-rotate 8s linear infinite;
+}
+
+@keyframes service-card-rotate {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.service-card .card-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.service-card .card-paragraph {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  color: var(--paragraph);
+  line-height: 1.5;
+}
+
+.service-card .card-line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--line);
+  border: none;
+  margin: 0;
+}
+
+.service-card .card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-card .card-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.service-card .card-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.service-card .card-check svg {
+  width: 0.7rem;
+  height: 0.7rem;
+  fill: var(--black);
+}
+
+.service-card .card-list-text {
+  font-size: 0.8rem;
+  color: var(--white);
+}
+
+.service-card .card-btn {
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  background-image: linear-gradient(0deg, #F97316, hsl(24, 99%, 26%) 100%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--white);
+  border: 0;
+  border-radius: 9999px;
+  box-shadow: inset 0 -2px 25px -4px rgba(255,255,255,0.15);
+  transition: opacity 0.2s;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.service-card .card-btn:hover {
+  opacity: 0.9;
+}
+
+/* Uiverse contact form */
+.uv-form-container {
+  background: linear-gradient(#181818, #181818) padding-box,
+              linear-gradient(145deg, transparent 35%, #F97316, #FBBF24) border-box;
+  border: 2px solid transparent;
+  padding: 36px 32px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 100%;
+}
+.uv-form { display: flex; flex-direction: column; gap: 14px; }
+.uv-form-group { display: flex; flex-direction: column; gap: 0; }
+.uv-form-group label { display: block; margin-bottom: 6px; color: #888; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+.uv-form-group input,
+.uv-form-group select {
+  width: 100%; padding: 12px 16px; border-radius: 10px; color: #fff; font-family: inherit; font-size: 14px;
+  background-color: rgba(255,255,255,0.07); border: 1px solid #2d2d2d; transition: border-color 0.2s;
+}
+.uv-form-group textarea {
+  width: 100%; padding: 12px 16px; border-radius: 10px; resize: none; color: #fff; height: 108px;
+  border: 1px solid #2d2d2d; background-color: rgba(255,255,255,0.07); font-family: inherit; font-size: 14px; transition: border-color 0.2s;
+}
+.uv-form-group input::placeholder, .uv-form-group textarea::placeholder { opacity: 0.3; color: #fff; }
+.uv-form-group select option { background-color: #181818; color: #fff; }
+.uv-form-group input:focus, .uv-form-group textarea:focus, .uv-form-group select:focus { outline: none; border-color: #F97316; }
+.uv-submit-btn {
+  display: flex; align-items: center; justify-content: center; width: 100%;
+  font-family: inherit; color: #fff; font-weight: 700; font-size: 14px;
+  background: linear-gradient(135deg, #F97316, #EA580C); border: 0;
+  padding: 14px 24px; gap: 8px; margin-top: 4px; cursor: pointer; border-radius: 10px; transition: opacity 0.2s, transform 0.1s;
+}
+.uv-submit-btn:hover { opacity: 0.88; }
+.uv-submit-btn:active { transform: scale(0.97); }
+.uv-submit-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* Spinning icon rings for contact page */
+@keyframes spin-fwd {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes spin-rev {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}

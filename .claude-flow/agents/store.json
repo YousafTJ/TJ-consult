@@ -1,0 +1,145 @@
+{
+  "agents": {
+    "agent-1780348353202-c2vefj": {
+      "agentId": "agent-1780348353202-c2vefj",
+      "agentType": "architect",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-06-01T21:12:33.202Z",
+      "domain": "tjconsult-web",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1780348354777-ao2qep": {
+      "agentId": "agent-1780348354777-ao2qep",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-06-01T21:12:34.777Z",
+      "domain": "tjconsult-web",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1780348355583-ocew7v": {
+      "agentId": "agent-1780348355583-ocew7v",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-06-01T21:12:35.583Z",
+      "domain": "tjconsult-web",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1780348356382-94nzr1": {
+      "agentId": "agent-1780348356382-94nzr1",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-06-01T21:12:36.382Z",
+      "domain": "tjconsult-web",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1780348356391-bj7hgy": {
+      "agentId": "agent-1780348356391-bj7hgy",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-06-01T21:12:36.391Z",
+      "domain": "tjconsult-web",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1780348356403-4msi1k": {
+      "agentId": "agent-1780348356403-4msi1k",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-06-01T21:12:36.403Z",
+      "domain": "tjconsult-web",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1780348356419-zp315m": {
+      "agentId": "agent-1780348356419-zp315m",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-06-01T21:12:36.419Z",
+      "domain": "tjconsult-web",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1780348356429-5c8llf": {
+      "agentId": "agent-1780348356429-5c8llf",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-06-01T21:12:36.429Z",
+      "domain": "tjconsult-web",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1780348356443-291o0v": {
+      "agentId": "agent-1780348356443-291o0v",
+      "agentType": "coder",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "haiku"
+      },
+      "createdAt": "2026-06-01T21:12:36.443Z",
+      "domain": "tjconsult-web",
+      "model": "haiku",
+      "modelRoutedBy": "explicit"
+    },
+    "agent-1780348356452-nxf9hq": {
+      "agentId": "agent-1780348356452-nxf9hq",
+      "agentType": "reviewer",
+      "status": "idle",
+      "health": 1,
+      "taskCount": 0,
+      "config": {
+        "model": "sonnet"
+      },
+      "createdAt": "2026-06-01T21:12:36.452Z",
+      "domain": "tjconsult-web",
+      "model": "sonnet",
+      "modelRoutedBy": "explicit"
+    }
+  },
+  "version": "3.0.0"
+}

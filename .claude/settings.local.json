@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude-flow__agent_spawn",
+      "mcp__claude-flow__swarm_status",
+      "mcp__claude-flow__memory_store",
+      "Bash(where gh *)",
+      "Bash(git -C \"c:\\\\Users\\\\PC\\\\AI-OS\\\\projects\\\\TJ-consult\" status)"
+    ]
+  }
+}
