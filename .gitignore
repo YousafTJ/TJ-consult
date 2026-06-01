@@ -1,1 +1,11 @@
 node_modules
+.next
+.env
+.env.local
+.env*.local
+ruvector.db
+agentdb.rvf
+agentdb.rvf.lock
+skills-lock.json
+.claude-flow/daemon-state.json
+.claude-flow/metrics
