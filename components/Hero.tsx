@@ -65,12 +65,27 @@ const IconVectorDB: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
+const IconAzure: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none">
+    <rect width="24" height="24" rx="4" fill="#0078D4" opacity="0.1"/>
+    <path d="M9.5 3.5H6L2.5 17h4l1-3h5l1 3H18L12.5 3.5H9.5z" fill="#0078D4" opacity="0.9"/>
+    <path d="M8 11l2-5 2 5H8z" fill="white" opacity="0.6"/>
+  </svg>
+);
+
+const IconOpenAI: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none">
+    <rect width="24" height="24" rx="4" fill="#111827" opacity="0.08"/>
+    <path d="M20.2 9.5a5.5 5.5 0 00-.48-4.54 5.6 5.6 0 00-6.04-2.69A5.6 5.6 0 0010 .5a5.6 5.6 0 00-5.33 3.87 5.6 5.6 0 00-3.74 2.72 5.6 5.6 0 00.69 6.58 5.6 5.6 0 00.48 4.54 5.6 5.6 0 006.04 2.69A5.6 5.6 0 0014 23.5a5.6 5.6 0 005.33-3.87 5.6 5.6 0 003.74-2.72 5.6 5.6 0 00-.87-7.41zM14 21.9a3.7 3.7 0 01-2.38-.87l.12-.07 3.95-2.28a.64.64 0 00.32-.56V12.4l1.67.96a.06.06 0 01.03.05v4.61A3.72 3.72 0 0114 21.9zM3.92 18.07a3.7 3.7 0 01-.44-2.49l.12.07 3.95 2.28a.64.64 0 00.64 0l4.83-2.79v1.92a.06.06 0 01-.02.06l-3.99 2.3a3.72 3.72 0 01-5.09-1.35zM2.7 8.27a3.7 3.7 0 011.94-1.63v4.55a.64.64 0 00.32.56l4.82 2.78-1.67.96a.06.06 0 01-.06 0L3.51 13A3.72 3.72 0 012.7 8.27zm13.72 3.2l-4.83-2.79 1.67-.96a.06.06 0 01.06 0l4.54 2.62a3.72 3.72 0 01-.57 6.72v-4.7a.64.64 0 00-.37-.89zm1.66-2.51l-.12-.07-3.94-2.28a.64.64 0 00-.64 0L8.55 9.4V7.48a.06.06 0 01.02-.06l3.99-2.3A3.72 3.72 0 0118.08 8.96zm-10.43 3.43l-1.67-.97a.06.06 0 01-.03-.05V6.92a3.72 3.72 0 016.08-2.86l-.12.07-3.95 2.28a.64.64 0 00-.32.56l.01 5.7zm.9-1.96l2.15-1.24 2.15 1.24v2.47l-2.15 1.24-2.15-1.24V10.43z" fill="#111827" opacity="0.75"/>
+  </svg>
+);
+
 const heroIcons = [
   // Original 16
   { id: 1,  icon: makeIcon('https://cdn.simpleicons.org/python/F97316', 'Python'),           className: 'top-[8%] left-[8%]' },
   { id: 2,  icon: makeIcon('https://cdn.simpleicons.org/docker/2496ED', 'Docker'),           className: 'top-[20%] right-[6%]' },
-  { id: 3,  icon: makeIcon('https://cdn.simpleicons.org/microsoftazure/0078D4', 'Azure'),    className: 'top-[75%] left-[8%]' },
-  { id: 4,  icon: makeIcon('https://cdn.simpleicons.org/openai/111827', 'OpenAI'),           className: 'bottom-[8%] right-[8%]' },
+  { id: 3,  icon: IconAzure,                                                                   className: 'top-[75%] left-[8%]' },
+  { id: 4,  icon: IconOpenAI,                                                                 className: 'bottom-[8%] right-[8%]' },
   { id: 5,  icon: makeIcon('https://cdn.simpleicons.org/github/111827', 'GitHub'),           className: 'top-[4%] left-[30%]' },
   { id: 6,  icon: makeIcon('https://cdn.simpleicons.org/react/61DAFB', 'React'),             className: 'top-[4%] right-[30%]' },
   { id: 7,  icon: makeIcon('https://cdn.simpleicons.org/typescript/3178C6', 'TypeScript'),   className: 'bottom-[6%] left-[25%]' },

@@ -197,17 +197,17 @@ export default function ServicesPage() {
     <>
       {/* Page Hero */}
       <AnimatedSection>
-      <section className="bg-gray-900 text-white py-20 lg:py-28">
+      <section className="bg-gray-900 text-white py-12 sm:py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
             <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Alle ydelser</span>
           </div>
-          <h1 className="text-5xl lg:text-7xl font-black mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black mb-4 sm:mb-6 tracking-tight">
             Hvad kan jeg{' '}
             <span className="text-orange-500">bygge for dig?</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl leading-relaxed mb-10">
+          <p className="text-base sm:text-xl text-gray-400 max-w-2xl leading-relaxed mb-8 sm:mb-10">
             20+ specialiserede IT-ydelser fordelt på 4 domæner. Fra AI-agenter til cloud-infrastruktur — alt leveret med fokus på din forretningsmæssige bundlinje.
           </p>
 
@@ -219,7 +219,7 @@ export default function ServicesPage() {
                 <a
                   key={cat.id}
                   href={`#${cat.id}`}
-                  className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white transition-all"
+                  className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 px-4 py-3 min-h-[44px] rounded-full text-sm font-medium text-gray-300 hover:text-white transition-all"
                 >
                   <div className={`w-2 h-2 rounded-full ${colors.dot}`} />
                   {cat.title}
@@ -238,11 +238,11 @@ export default function ServicesPage() {
           <AnimatedSection key={category.id}>
           <section
             id={category.id}
-            className={`py-20 ${catIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
+            className={`py-12 sm:py-20 overflow-hidden ${catIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Category header */}
-              <div className="relative bg-white rounded-3xl p-8 lg:p-10 mb-12 border border-gray-100 shadow-md overflow-hidden">
+              <div className="relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 mb-8 sm:mb-12 border border-gray-100 shadow-md overflow-hidden">
                 {/* Left accent bar */}
                 <div className={`absolute left-0 inset-y-0 w-1.5 rounded-r-full ${colors.dot}`} />
                 {/* Large icon watermark */}
@@ -250,7 +250,7 @@ export default function ServicesPage() {
                   <category.icon className="w-36 h-36 text-gray-900" />
                 </div>
 
-                <div className="flex items-start gap-6 pl-5">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 pl-4 sm:pl-5">
                   <div className={`w-14 h-14 ${colors.icon} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm`}>
                     <category.icon className="w-7 h-7" />
                   </div>

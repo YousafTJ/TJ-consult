@@ -101,8 +101,8 @@ export default function LoesningerIPraksis() {
         <Carousel opts={{ align: 'start', loop: true }} className="w-full">
           {/* Desktop nav — inde i Carousel context */}
           <div className="hidden md:flex justify-end gap-2 mb-6">
-            <CarouselPrevious className="relative left-0 top-0 translate-y-0 border-gray-200 hover:border-orange-500 hover:text-orange-500 h-10 w-10" />
-            <CarouselNext className="relative right-0 top-0 translate-y-0 border-gray-200 hover:border-orange-500 hover:text-orange-500 h-10 w-10" />
+            <CarouselPrevious className="relative left-0 top-0 translate-y-0 border-gray-200 hover:border-orange-500 hover:text-orange-500 h-11 w-11" />
+            <CarouselNext className="relative right-0 top-0 translate-y-0 border-gray-200 hover:border-orange-500 hover:text-orange-500 h-11 w-11" />
           </div>
 
           <CarouselContent className="-ml-6">
@@ -157,8 +157,8 @@ export default function LoesningerIPraksis() {
 
           {/* Mobile navigation */}
           <div className="flex md:hidden justify-center gap-3 mt-6">
-            <CarouselPrevious className="relative left-0 top-0 translate-y-0 border-gray-200 hover:border-orange-500 hover:text-orange-500" />
-            <CarouselNext className="relative right-0 top-0 translate-y-0 border-gray-200 hover:border-orange-500 hover:text-orange-500" />
+            <CarouselPrevious className="relative left-0 top-0 translate-y-0 border-gray-200 hover:border-orange-500 hover:text-orange-500 h-11 w-11" />
+            <CarouselNext className="relative right-0 top-0 translate-y-0 border-gray-200 hover:border-orange-500 hover:text-orange-500 h-11 w-11" />
           </div>
         </Carousel>
       </div>

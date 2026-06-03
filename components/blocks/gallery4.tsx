@@ -49,7 +49,7 @@ const Gallery4 = ({
   }, [carouselApi]);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 md:py-20 bg-gray-50 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-4">
@@ -124,16 +124,18 @@ const Gallery4 = ({
           </CarouselContent>
         </Carousel>
 
-        <div className="mt-8 flex justify-center gap-2">
+        <div className="mt-6 flex justify-center gap-1">
           {items.map((_, index) => (
             <button
               key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                currentSlide === index ? "bg-orange-500" : "bg-gray-300"
-              }`}
+              className="h-11 w-11 flex items-center justify-center"
               onClick={() => carouselApi?.scrollTo(index)}
               aria-label={`Gå til slide ${index + 1}`}
-            />
+            >
+              <span className={`block h-2 w-2 rounded-full transition-colors ${
+                currentSlide === index ? "bg-orange-500" : "bg-gray-300"
+              }`} />
+            </button>
           ))}
         </div>
       </div>

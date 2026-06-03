@@ -44,12 +44,12 @@ const cards = [
 
 export default function ReelErfaring() {
   return (
-    <div className="grid md:grid-cols-3 gap-6">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
       {cards.map(({ icon: Icon, title, description }) => (
         <GlowCard
           key={title}
           glowColor="orange"
-          className="p-8 h-full overflow-hidden"
+          className="p-5 sm:p-8 h-full overflow-hidden"
         >
           <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-5 shadow-md shadow-orange-200/70">
             <Icon className="w-6 h-6 text-white" />

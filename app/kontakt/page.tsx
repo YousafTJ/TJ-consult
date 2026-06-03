@@ -105,7 +105,7 @@ export default function KontaktPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-20 bg-gradient-to-br from-gray-50 via-orange-50/40 to-white">
+      <section className="relative overflow-hidden py-12 sm:py-20 bg-gradient-to-br from-gray-50 via-orange-50/40 to-white">
 
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-50/40 rounded-full blur-2xl pointer-events-none" />
@@ -119,32 +119,32 @@ export default function KontaktPage() {
           </div>
 
           {/* Supercharge-style card */}
-          <div className="border border-gray-200 rounded-3xl p-8 grid md:grid-cols-2 gap-10 items-center bg-white/80">
+          <div className="border border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 grid sm:grid-cols-2 gap-6 sm:gap-10 items-center bg-white/80">
             {/* Left: big heading + description + buttons */}
             <div>
-              <p className="uppercase text-sm font-semibold text-gray-500 mb-3">
+              <p className="uppercase text-xs sm:text-sm font-semibold text-gray-500 mb-2 sm:mb-3">
                 IT-konsulent & AI-specialist
               </p>
-              <h1 className="text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-[1.05] tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-3 sm:mb-4 leading-[1.05] tracking-tight">
                 IT der{' '}
                 <span className="text-orange-500">virker.</span>
                 <br />
                 AI der{' '}
                 <span className="text-orange-500">leverer.</span>
               </h1>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 Intelligent IT-rådgivning og AI-løsninger der skaber reel, målbar forretningsmæssig værdi — fra strategi til implementering.
               </p>
-              <div className="flex gap-4 flex-wrap">
+              <div className="flex gap-3 sm:gap-4 flex-wrap">
                 <Button
-                  className="bg-gray-900 text-white px-5 py-2.5 h-auto rounded-lg font-medium hover:bg-gray-700"
+                  className="bg-gray-900 text-white px-5 py-3 h-auto min-h-[44px] rounded-lg font-medium hover:bg-gray-700 text-sm"
                   onClick={() => document.getElementById('kontakt-form')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Skriv til mig
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-gray-300 text-gray-600 px-5 py-2.5 h-auto rounded-lg font-medium hover:border-orange-500 hover:text-orange-500"
+                  className="border-gray-300 text-gray-600 px-5 py-3 h-auto min-h-[44px] rounded-lg font-medium hover:border-orange-500 hover:text-orange-500 text-sm"
                   asChild
                 >
                   <a href="/services">Se ydelser →</a>
@@ -152,15 +152,15 @@ export default function KontaktPage() {
               </div>
             </div>
 
-            {/* Right: square icon grid */}
-            <div className="grid grid-cols-6 gap-3">
+            {/* Right: square icon grid — responsive */}
+            <div className="grid grid-cols-6 gap-1.5 sm:gap-3">
               {techIcons.map((url, idx) => (
                 <div
                   key={idx}
-                  className="w-14 h-14 bg-white border border-gray-200 rounded-xl shadow-sm flex items-center justify-center p-2.5"
+                  className={`w-full aspect-square bg-white border border-gray-200 rounded-lg sm:rounded-xl shadow-sm flex items-center justify-center p-1.5 sm:p-2.5 ${idx >= 12 ? 'hidden sm:flex' : ''}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={url} alt="" className="w-8 h-8 object-contain" />
+                  <img src={url} alt="" className="w-full h-full object-contain" />
                 </div>
               ))}
             </div>
@@ -239,12 +239,12 @@ export default function KontaktPage() {
                 )}
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-5 text-sm text-gray-500">
-                <a href="mailto:youjav@hotmail.com" className="flex items-center gap-2 hover:text-orange-500 transition-colors">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-5 text-sm text-gray-500">
+                <a href="mailto:youjav@hotmail.com" className="flex items-center gap-2 hover:text-orange-500 transition-colors min-h-[44px] py-2">
                   <Mail className="w-4 h-4" /> youjav@hotmail.com
                 </a>
                 <div className="w-1 h-1 bg-gray-300 rounded-full hidden sm:block" />
-                <a href="tel:+4542755645" className="flex items-center gap-2 hover:text-orange-500 transition-colors">
+                <a href="tel:+4542755645" className="flex items-center gap-2 hover:text-orange-500 transition-colors min-h-[44px] py-2">
                   <Phone className="w-4 h-4" /> +45 42 75 56 45
                 </a>
               </div>

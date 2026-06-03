@@ -12,7 +12,14 @@
       "PowerShell(npx ruflo --version 2>&1)",
       "PowerShell(npx @ruflo/cli --version 2>&1)",
       "PowerShell(npx ruflo --help 2>&1)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(npx playwright *)",
+      "Bash(Start-Process -NoNewWindow -FilePath \"npm\" -ArgumentList \"run\",\"dev\")",
+      "Bash(Start-Sleep 5)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(node scripts/mobile-audit.mjs)",
+      "Bash(npm install *)"
     ]
   }
 }

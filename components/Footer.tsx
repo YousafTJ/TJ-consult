@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
+            <Link href="/" className="inline-flex items-center gap-3 mb-4 group min-h-[44px]">
               <span className="font-bold text-white text-xl tracking-tight group-hover:text-orange-400 transition-colors">TJ-Consult</span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
@@ -32,14 +32,14 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href="mailto:youjav@hotmail.com"
-                className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors text-sm"
+                className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors text-sm py-1.5 min-h-[44px]"
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 youjav@hotmail.com
               </a>
               <a
                 href="tel:+4542755645"
-                className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors text-sm"
+                className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors text-sm py-1.5 min-h-[44px]"
               >
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 +45 42 75 56 45
@@ -59,7 +59,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-orange-400 transition-colors text-sm"
+                    className="text-gray-400 hover:text-orange-400 transition-colors text-sm block py-1.5 min-h-[44px] flex items-center"
                   >
                     {link.label}
                   </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-orange-400 transition-colors text-sm"
+                    className="text-gray-400 hover:text-orange-400 transition-colors text-sm block py-1.5 min-h-[44px] flex items-center"
                   >
                     {link.label}
                   </Link>
@@ -87,7 +87,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/in/yousaf-tahir-javaid-277285230"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-gray-400 hover:text-orange-400 transition-colors text-sm"
+                  className="flex items-center gap-1 text-gray-400 hover:text-orange-400 transition-colors text-sm py-1.5 min-h-[44px]"
                 >
                   LinkedIn <ExternalLink className="w-3 h-3" />
                 </a>
@@ -106,7 +106,7 @@ export default function Footer() {
               href="https://linkedin.com/in/yousaf-tahir-javaid"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 bg-gray-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors"
+              className="w-11 h-11 bg-gray-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4 text-gray-400" />

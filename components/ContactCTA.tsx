@@ -61,12 +61,12 @@ export default function ContactCTA() {
 
         {/* Quick contact */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500">
-          <a href="mailto:youjav@hotmail.com" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
+          <a href="mailto:youjav@hotmail.com" className="flex items-center gap-2 hover:text-orange-400 transition-colors min-h-[44px] py-2">
             <Mail className="w-4 h-4" />
             youjav@hotmail.com
           </a>
           <div className="w-1 h-1 bg-gray-700 rounded-full hidden sm:block" />
-          <a href="tel:+4542755645" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
+          <a href="tel:+4542755645" className="flex items-center gap-2 hover:text-orange-400 transition-colors min-h-[44px] py-2">
             <Phone className="w-4 h-4" />
             +45 42 75 56 45
           </a>

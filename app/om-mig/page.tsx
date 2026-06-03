@@ -66,7 +66,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gray-900 text-white py-20 lg:py-28">
+      <section className="bg-gray-900 text-white py-14 sm:py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
                 <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
                 <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Om mig</span>
               </div>
-              <h1 className="text-5xl lg:text-6xl font-black mb-4 tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 tracking-tight leading-tight">
                 Yousaf{' '}
                 <span className="text-orange-500">Javaid</span>
               </h1>
@@ -88,12 +88,12 @@ export default function AboutPage() {
                   <MapPin className="w-4 h-4 text-orange-400" />
                   <span>Brøndby Strand, Danmark</span>
                 </div>
-                <a href="mailto:youjav@hotmail.com" className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors">
-                  <Mail className="w-4 h-4 text-orange-400" />
+                <a href="mailto:youjav@hotmail.com" className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors py-1.5 min-h-[44px]">
+                  <Mail className="w-4 h-4 text-orange-400 flex-shrink-0" />
                   youjav@hotmail.com
                 </a>
-                <a href="tel:+4542755645" className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors">
-                  <Phone className="w-4 h-4 text-orange-400" />
+                <a href="tel:+4542755645" className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors py-1.5 min-h-[44px]">
+                  <Phone className="w-4 h-4 text-orange-400 flex-shrink-0" />
                   +45 42 75 56 45
                 </a>
               </div>
@@ -138,13 +138,13 @@ export default function AboutPage() {
 
       {/* Consultant work */}
       <AnimatedSection>
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
             <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Konsulentarbejde</span>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 tracking-tight">
             Reel erfaring fra virkelige virksomheder
           </h2>
 

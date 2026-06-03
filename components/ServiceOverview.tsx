@@ -105,7 +105,7 @@ export default function ServiceOverview() {
                   </ul>
 
                   {/* CTA */}
-                  <Link href={cat.href} className="card-btn">
+                  <Link href={cat.href} className="card-btn" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {cat.cta}
                   </Link>
                 </div>
