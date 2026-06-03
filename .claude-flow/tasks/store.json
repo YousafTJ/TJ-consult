@@ -1,0 +1,18 @@
+{
+  "tasks": {
+    "task-1780438586002-cnrt67": {
+      "taskId": "task-1780438586002-cnrt67",
+      "type": "refactoring",
+      "description": "din opgave her",
+      "priority": "high",
+      "status": "pending",
+      "progress": 0,
+      "assignedTo": [],
+      "tags": [],
+      "createdAt": "2026-06-02T22:16:26.002Z",
+      "startedAt": null,
+      "completedAt": null
+    }
+  },
+  "version": "3.0.0"
+}

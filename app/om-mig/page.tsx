@@ -1,23 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ArrowRight,
-  ArrowLeft,
-  MapPin,
-  Mail,
-  Phone,
-  ExternalLink,
-  Code2,
-  Shield,
-  Cloud,
-  Cpu,
-  Network,
-  Database,
-  Globe,
-  CheckCircle2,
-  Star,
-  Wrench,
-} from 'lucide-react'
+import AnimatedSection from '@/components/AnimatedSection'
+import ReelErfaring from '@/components/ReelErfaring'
+import { Gallery4, type Gallery4Item } from '@/components/blocks/gallery4'
+import { ArrowRight, MapPin, Mail, Phone, ExternalLink } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Om Mig — Yousaf Javaid, IT-konsulent & AI-specialist',
@@ -25,145 +11,56 @@ export const metadata: Metadata = {
     'IT-konsulent og AI-specialist med 100+ konsulentimer, 1.000+ kunder hjulpet og 1.000+ tekniske fejl troubleshootet. Bygget skalerbare systemer, AI-agenter og komplette webløsninger.',
 }
 
-const projects = [
+const galleryItems: Gallery4Item[] = [
   {
-    name: 'Gardian',
-    tagline: 'Fuldt skalerbart dashboard & monitoring system',
+    id: 'gardian',
+    title: 'Gardian — Dashboard & Monitoring',
     description:
-      'Et komplet, skalerbart dashboard- og monitoringssystem bygget fra bunden. Real-time indsigt i systemer, processer og KPI\'er via et intuitivt dashboard med automatiske alerts, dataaggregering og historisk analyse.',
-    tech: ['Next.js', 'Node.js', 'WebSockets', 'PostgreSQL', 'Docker', 'CI/CD'],
-    highlights: [
-      'Real-time monitoring med live dataopdateringer',
-      'Skalerbar arkitektur — designet til vækst',
-      'Automatiske alerts og notifikationer',
-      'Historisk dataanalyse og rapportgenerering',
-    ],
-    featured: true,
+      'Skalerbart real-time dashboard med automatiske alerts, dataaggregering og historisk analyse bygget fra bunden.',
+    href: '#',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1080&q=80',
   },
   {
-    name: 'AI-Agenter til virksomheder',
-    tagline: 'Komplette AI-agenter der automatiserer arbejdsprocesser',
+    id: 'ai-agenter',
+    title: 'AI-Agenter til virksomheder',
     description:
-      'Bygget og implementeret komplette AI-agenter for flere virksomheder — fra kundeservice-bots til interne workflow-agenter. Markant mere produktivt arbejde og færre manuelle opgaver.',
-    tech: ['Python', 'LangChain', 'OpenAI API', 'MCP', 'Vector DB', 'Node.js'],
-    highlights: [
-      'Implementeret for virksomheder på tværs af brancher',
-      'Automatiseret gentagne og tidskrævende processer',
-      'Markant øget produktivitet og reduceret fejlrate',
-      'Skræddersyede AI-workflows tilpasset hver virksomhed',
-    ],
-    featured: true,
+      'Komplette AI-agenter der automatiserer arbejdsprocesser — fra kundeservice-bots til interne workflow-agenter.',
+    href: '#',
+    image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1080&q=80',
   },
   {
-    name: 'Bilvask Danmark — AI Fakturering & Rapportering',
-    tagline: 'Fuldt automatiseret fakturering og rapportering',
+    id: 'bilvask',
+    title: 'Bilvask Danmark — AI Fakturering',
     description:
-      'Bygget og implementeret AI-agenter for Bilvask Danmark, der fuldt automatiserer al fakturering og rapportering. Eliminerede manuelle processer og reducerede fejlrate markant.',
-    tech: ['Python', 'AI Agents', 'API Integration', 'MySQL', 'Automatisering'],
-    highlights: [
-      'Fuldt automatiseret faktureringsproces',
-      'Automatisk rapportgenerering til ledelsen',
-      'Eliminerede manuelle fejl og dobbeltbooking',
-    ],
-    featured: true,
+      'Fuldt automatiseret fakturering og rapportering der eliminerede manuelle processer og reducerede fejlrate markant.',
+    href: '#',
+    image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1080&q=80',
   },
   {
-    name: 'CRM & Rapporteringssystem — Marketingsbureau',
-    tagline: 'Full-automated CRM med integreret rapportering',
+    id: 'crm-marketing',
+    title: 'CRM & Rapportering — Marketingsbureau',
     description:
-      'Komplet, fuldt automatiseret CRM- og rapporteringssystem til et marketingsbureau. Automatisk dataindsamling, klientrapporter, pipeline-tracking og performance-dashboards — alt kører uden manuel indsats.',
-    tech: ['Next.js', 'Node.js', 'MySQL', 'REST APIs', 'Automatisering'],
-    highlights: [
-      'Fuldt automatiseret dataindsamling og rapportering',
-      'Automatiske klientrapporter genereres og sendes',
-      'Real-time pipeline og performance-tracking',
-    ],
-    featured: false,
+      'Fuldt automatiseret CRM med real-time pipeline, performance-dashboards og automatiske klientrapporter.',
+    href: '#',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1080&q=80',
   },
   {
-    name: 'Spring Boot — Intern Leasing Platform',
-    tagline: 'Skræddersyet intern platform til leasingadministration',
+    id: 'spring-boot',
+    title: 'Spring Boot — Leasing Platform',
     description:
-      'Bygget en intern leasing-platform for Spring Boot, der centraliserer og automatiserer al leasingadministration — kontrakter, betalinger, fornyelser og kundekommunikation samlet ét sted.',
-    tech: ['Spring Boot', 'MySQL', 'React', 'TypeScript', 'Docker'],
-    highlights: [
-      'Centraliseret kontraktstyring',
-      'Automatiske forfaldspåmindelser og fornyelser',
-      'Brugerstyring og rollebaseret adgang',
-    ],
-    featured: false,
+      'Skræddersyet intern leasing-platform der centraliserer kontrakter, betalinger og kundekommunikation.',
+    href: '#',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1080&q=80',
   },
   {
-    name: 'Royal Limousine — royalchauffeur.dk',
-    tagline: 'Professionel hjemmeside & digital tilstedeværelse',
+    id: 'royal-limousine',
+    title: 'Royal Limousine — royalchauffeur.dk',
     description:
-      'Komplet hjemmeside for Royal Limousine. Professionelt design, mobiloptimeret og bygget til at konvertere besøgende til kunder.',
-    tech: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript'],
-    highlights: [
-      'Professionelt og konverteringsoptimeret design',
-      'Fuldt mobilresponsiv og SEO-optimeret',
-    ],
-    featured: false,
-    url: 'https://www.royalchauffeur.dk/',
+      'Professionelt, konverteringsoptimeret website bygget til at konvertere besøgende til kunder.',
+    href: 'https://www.royalchauffeur.dk/',
+    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1080&q=80',
   },
 ]
-
-const skillCategories = [
-  {
-    icon: Code2,
-    title: 'Programmering',
-    color: 'blue',
-    skills: ['Java', 'Python', 'Node.js', 'React', 'JavaScript', 'TypeScript', 'HTML/CSS'],
-  },
-  {
-    icon: Database,
-    title: 'Databaser',
-    color: 'green',
-    skills: ['MySQL', 'CosmosDB', 'Vector Databases', 'PostgreSQL', 'SQL'],
-  },
-  {
-    icon: Shield,
-    title: 'Sikkerhed',
-    color: 'red',
-    skills: ['Netværkssikkerhed', 'Kryptering', 'SIEM', 'Firewalls', 'PKI & Certifikater'],
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud & DevOps',
-    color: 'sky',
-    skills: ['Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Linux', 'Azure'],
-  },
-  {
-    icon: Cpu,
-    title: 'AI & Machine Learning',
-    color: 'purple',
-    skills: ['RAG-arkitektur', 'Vector-databaser', 'AI Workflow Design', 'MCP-servere', 'AI-agenter', 'LLM Integration'],
-  },
-  {
-    icon: Network,
-    title: 'Netværk & Microsoft',
-    color: 'orange',
-    skills: ['Active Directory', 'Windows Server', 'Microsoft 365', 'Exchange', 'Azure AD', 'Intune'],
-  },
-]
-
-const colorMap: Record<string, string> = {
-  blue: 'bg-blue-50 text-blue-600',
-  green: 'bg-green-50 text-green-600',
-  red: 'bg-red-50 text-red-600',
-  sky: 'bg-sky-50 text-sky-600',
-  purple: 'bg-purple-50 text-purple-600',
-  orange: 'bg-orange-50 text-orange-600',
-}
-
-const iconColorMap: Record<string, string> = {
-  blue: 'bg-blue-100 text-blue-500',
-  green: 'bg-green-100 text-green-500',
-  red: 'bg-red-100 text-red-500',
-  sky: 'bg-sky-100 text-sky-500',
-  purple: 'bg-purple-100 text-purple-500',
-  orange: 'bg-orange-100 text-orange-500',
-}
 
 export default function AboutPage() {
   return (
@@ -171,14 +68,6 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="bg-gray-900 text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-orange-400 text-sm mb-8 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Tilbage til forside
-          </Link>
-
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 mb-6">
@@ -238,87 +127,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What I've delivered */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-              <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Hvad jeg har leveret</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-              Løsninger der virker i praksis
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Udvalgte projekter og leverancer der demonstrerer bredden og dybden af mine tekniske kompetencer.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <div
-                key={project.name}
-                className={`bg-white rounded-2xl border p-10 flex flex-col transition-all hover:shadow-xl hover:-translate-y-1 ${
-                  project.featured
-                    ? 'border-orange-200 shadow-md shadow-orange-50'
-                    : 'border-gray-100 shadow-sm'
-                }`}
-              >
-                {/* Header */}
-                <div className="mb-3">
-                  <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <h3 className="font-bold text-gray-900 text-base leading-tight">{project.name}</h3>
-                    {project.featured && (
-                      <span className="inline-flex items-center gap-1 bg-orange-100 text-orange-600 text-xs font-bold px-2 py-0.5 rounded-full shrink-0">
-                        <Star className="w-2.5 h-2.5" /> Flagship
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-orange-500 font-semibold text-xs">{project.tagline}</p>
-                </div>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
-
-                {/* Highlights */}
-                <div className="space-y-1.5 mb-4">
-                  {project.highlights.map((h) => (
-                    <div key={h} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-orange-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-xs text-gray-600">{h}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Tech badges */}
-                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-gray-100">
-                  {project.tech.map((t) => (
-                    <span key={t} className="text-xs bg-gray-50 border border-gray-200 text-gray-600 px-2.5 py-1 rounded-full font-medium">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                {/* URL link */}
-                {'url' in project && project.url && (
-                  <a
-                    href={project.url as string}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 mt-3 text-orange-500 hover:text-orange-600 font-semibold text-xs"
-                  >
-                    <Globe className="w-3.5 h-3.5" />
-                    Besøg siden
-                    <ExternalLink className="w-2.5 h-2.5" />
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Gallery — løsninger der virker i praksis */}
+      <AnimatedSection>
+        <Gallery4
+          title="Løsninger der virker i praksis"
+          description="Udvalgte projekter og leverancer der demonstrerer bredden og dybden af mine tekniske kompetencer."
+          items={galleryItems}
+        />
+      </AnimatedSection>
 
       {/* Consultant work */}
+      <AnimatedSection>
       <section className="py-20 bg-white">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
           <div className="inline-flex items-center gap-2 mb-6">
@@ -329,52 +148,13 @@ export default function AboutPage() {
             Reel erfaring fra virkelige virksomheder
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Wrench,
-                title: '1.000+ tekniske fejl troubleshootet',
-                description: 'Fra netværksproblemer og servernedbrud til softwarefejl og sikkerhedshændelser — løst over 1.000 tekniske problemer på tværs af virksomheder og brancher.',
-              },
-              {
-                icon: Phone,
-                title: '1.000+ kunder hjulpet med support',
-                description: 'Direkte kundekontakt med teknisk support og service. Høj løsningsrate, hurtig responstid og fokus på at give kunden den rigtige løsning første gang.',
-              },
-              {
-                icon: Cpu,
-                title: 'AI-implementering for virksomheder',
-                description: 'Hjulpet virksomheder med at identificere, planlægge og implementere AI-løsninger — fra simple automations til komplekse agentsystemer.',
-              },
-              {
-                icon: Shield,
-                title: 'IT-sikkerhed og infrastruktur',
-                description: 'Rådgivning og implementering inden for netværkssikkerhed, cloudopsætning, Microsoft 365-migrering og IT-infrastruktur til mellemstore virksomheder.',
-              },
-              {
-                icon: Code2,
-                title: 'Skræddersyet systemudvikling',
-                description: 'Udvikling af forretningsmæssige skræddersyede systemer — CRM-platforme, bookingsystemer, leasing-portaler og automatiserede rapporterings-workflows.',
-              },
-              {
-                icon: Network,
-                title: 'Domæne, mailserver & Exchange Online — +100 kunder',
-                description: 'Opsætning og konfiguration af domæner, mailservere og Exchange Online for over 100 kunder. DNS, MX, SPF, DKIM, DMARC og Microsoft 365-integration.',
-              },
-            ].map(({ icon: Icon, title, description }) => (
-              <div key={title} className="bg-gray-50 rounded-2xl border border-gray-100 p-8 hover:border-orange-200 hover:shadow-md transition-all">
-                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-orange-500" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-3">{title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
-              </div>
-            ))}
-          </div>
+          <ReelErfaring />
         </div>
       </section>
+      </AnimatedSection>
 
       {/* CTA */}
+      <AnimatedSection>
       <section className="py-20 bg-gray-900">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Klar til at samarbejde?</h2>
@@ -396,6 +176,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      </AnimatedSection>
     </>
   )
 }

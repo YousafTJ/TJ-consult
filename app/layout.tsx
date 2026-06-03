@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import PageTransition from '@/components/PageTransition'
 
 export const metadata: Metadata = {
   title: {
@@ -42,7 +43,9 @@ export default function RootLayout({
     <html lang="da">
       <body className="min-h-screen bg-white antialiased">
         <Navbar />
-        <main className="pt-16 lg:pt-20">{children}</main>
+        <PageTransition>
+          <main className="pt-16 lg:pt-20">{children}</main>
+        </PageTransition>
         <Footer />
       </body>
     </html>

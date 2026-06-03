@@ -240,13 +240,13 @@ body {
 
 /* Uiverse contact form */
 .uv-form-container {
-  background: linear-gradient(#181818, #181818) padding-box,
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
               linear-gradient(145deg, transparent 35%, #F97316, #FBBF24) border-box;
   border: 2px solid transparent;
   padding: 36px 32px;
   font-size: 14px;
   font-family: inherit;
-  color: white;
+  color: #111827;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -256,18 +256,18 @@ body {
 }
 .uv-form { display: flex; flex-direction: column; gap: 14px; }
 .uv-form-group { display: flex; flex-direction: column; gap: 0; }
-.uv-form-group label { display: block; margin-bottom: 6px; color: #888; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+.uv-form-group label { display: block; margin-bottom: 6px; color: #6b7280; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
 .uv-form-group input,
 .uv-form-group select {
-  width: 100%; padding: 12px 16px; border-radius: 10px; color: #fff; font-family: inherit; font-size: 14px;
-  background-color: rgba(255,255,255,0.07); border: 1px solid #2d2d2d; transition: border-color 0.2s;
+  width: 100%; padding: 12px 16px; border-radius: 10px; color: #111827; font-family: inherit; font-size: 14px;
+  background-color: #f9fafb; border: 1px solid #d1d5db; transition: border-color 0.2s;
 }
 .uv-form-group textarea {
-  width: 100%; padding: 12px 16px; border-radius: 10px; resize: none; color: #fff; height: 108px;
-  border: 1px solid #2d2d2d; background-color: rgba(255,255,255,0.07); font-family: inherit; font-size: 14px; transition: border-color 0.2s;
+  width: 100%; padding: 12px 16px; border-radius: 10px; resize: none; color: #111827; height: 108px;
+  border: 1px solid #d1d5db; background-color: #f9fafb; font-family: inherit; font-size: 14px; transition: border-color 0.2s;
 }
-.uv-form-group input::placeholder, .uv-form-group textarea::placeholder { opacity: 0.3; color: #fff; }
-.uv-form-group select option { background-color: #181818; color: #fff; }
+.uv-form-group input::placeholder, .uv-form-group textarea::placeholder { opacity: 1; color: #9ca3af; }
+.uv-form-group select option { background-color: #ffffff; color: #111827; }
 .uv-form-group input:focus, .uv-form-group textarea:focus, .uv-form-group select:focus { outline: none; border-color: #F97316; }
 .uv-submit-btn {
   display: flex; align-items: center; justify-content: center; width: 100%;

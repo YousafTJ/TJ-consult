@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Bot, Code2, Shield, Server, ArrowRight, CheckCircle2, ArrowLeft } from 'lucide-react'
+import { Bot, Code2, Shield, Server, ArrowRight, CheckCircle2 } from 'lucide-react'
+import AnimatedSection from '@/components/AnimatedSection'
+import FallingItem from '@/components/FallingItem'
 
 export const metadata: Metadata = {
   title: 'Ydelser — AI, Software, Sikkerhed & Infrastruktur',
@@ -194,15 +196,9 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page Hero */}
+      <AnimatedSection>
       <section className="bg-gray-900 text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-orange-400 text-sm mb-8 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Tilbage til forside
-          </Link>
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
             <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Alle ydelser</span>
@@ -233,36 +229,44 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      </AnimatedSection>
 
       {/* Categories */}
       {categories.map((category, catIndex) => {
         const colors = colorMap[category.color as keyof typeof colorMap]
         return (
+          <AnimatedSection key={category.id}>
           <section
-            key={category.id}
             id={category.id}
             className={`py-20 ${catIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Category header */}
-              <div className={`bg-gradient-to-r ${colors.headerBg} rounded-3xl p-8 lg:p-10 mb-12`}>
-                <div className="flex items-start gap-6">
-                  <div className={`w-16 h-16 ${colors.icon} rounded-2xl flex items-center justify-center flex-shrink-0`}>
-                    <category.icon className="w-8 h-8" />
+              <div className="relative bg-white rounded-3xl p-8 lg:p-10 mb-12 border border-gray-100 shadow-md overflow-hidden">
+                {/* Left accent bar */}
+                <div className={`absolute left-0 inset-y-0 w-1.5 rounded-r-full ${colors.dot}`} />
+                {/* Large icon watermark */}
+                <div className="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.05]">
+                  <category.icon className="w-36 h-36 text-gray-900" />
+                </div>
+
+                <div className="flex items-start gap-6 pl-5">
+                  <div className={`w-14 h-14 ${colors.icon} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm`}>
+                    <category.icon className="w-7 h-7" />
                   </div>
                   <div>
                     <div className="flex items-center gap-3 mb-2">
                       <span className={`text-xs font-bold uppercase tracking-wider ${colors.text}`}>
                         Kategori {catIndex + 1}
                       </span>
-                      <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${colors.badge}`}>
+                      <span className={`text-xs px-2.5 py-0.5 rounded-full font-semibold ${colors.badge} border ${colors.border}`}>
                         {category.services.length} ydelser
                       </span>
                     </div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
                       {category.title}
                     </h2>
-                    <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
+                    <p className="text-gray-500 text-lg leading-relaxed max-w-2xl">
                       {category.description}
                     </p>
                   </div>
@@ -271,34 +275,40 @@ export default function ServicesPage() {
 
               {/* Services grid */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.services.map((service) => (
+                {category.services.map((service, serviceIndex) => (
+                  <FallingItem key={service.title} index={serviceIndex}>
                   <div
-                    key={service.title}
-                    className={`bg-white rounded-2xl border ${colors.border} border-opacity-50 border-gray-100 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group`}
+                    className="relative bg-white rounded-2xl border border-gray-100 p-6 pl-8 hover:shadow-xl hover:border-gray-200 hover:shadow-gray-100/80 transition-all duration-300 hover:-translate-y-1.5 group overflow-hidden h-full"
                   >
-                    <h3 className="font-bold text-gray-900 text-lg mb-3 group-hover:text-orange-500 transition-colors leading-tight">
+                    {/* Left accent bar */}
+                    <div className={`absolute left-0 top-4 bottom-4 w-1 rounded-full ${colors.dot} opacity-70 group-hover:opacity-100 group-hover:top-2 group-hover:bottom-2 transition-all duration-300`} />
+
+                    <h3 className="font-bold text-gray-900 text-base mb-3 leading-tight">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                    <p className="text-gray-500 text-sm leading-relaxed mb-5">
                       {service.description}
                     </p>
-                    <div className="space-y-2">
+                    <div className="space-y-2 pt-4 border-t border-gray-50">
                       {service.outcomes.map((outcome) => (
                         <div key={outcome} className="flex items-start gap-2">
-                          <CheckCircle2 className={`w-4 h-4 ${colors.text} flex-shrink-0 mt-0.5`} />
-                          <span className="text-xs text-gray-600">{outcome}</span>
+                          <CheckCircle2 className={`w-3.5 h-3.5 ${colors.text} flex-shrink-0 mt-0.5`} />
+                          <span className="text-xs text-gray-500 font-medium">{outcome}</span>
                         </div>
                       ))}
                     </div>
                   </div>
+                  </FallingItem>
                 ))}
               </div>
             </div>
           </section>
+          </AnimatedSection>
         )
       })}
 
       {/* CTA section */}
+      <AnimatedSection>
       <section className="py-20 bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
@@ -324,6 +334,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      </AnimatedSection>
     </>
   )
 }

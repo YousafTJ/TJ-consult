@@ -7,7 +7,12 @@
       "Bash(where gh *)",
       "Bash(git -C \"c:\\\\Users\\\\PC\\\\AI-OS\\\\projects\\\\TJ-consult\" status)",
       "Bash(winget install *)",
-      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\\\\\" -ErrorAction SilentlyContinue; Get-ChildItem \"$env:LOCALAPPDATA\\\\Programs\\\\GitHub CLI\\\\\" -ErrorAction SilentlyContinue; where.exe gh 2>&1)"
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\\\\\" -ErrorAction SilentlyContinue; Get-ChildItem \"$env:LOCALAPPDATA\\\\Programs\\\\GitHub CLI\\\\\" -ErrorAction SilentlyContinue; where.exe gh 2>&1)",
+      "Bash(npm run *)",
+      "PowerShell(npx ruflo --version 2>&1)",
+      "PowerShell(npx @ruflo/cli --version 2>&1)",
+      "PowerShell(npx ruflo --help 2>&1)",
+      "Bash(npx tsc *)"
     ]
   }
 }

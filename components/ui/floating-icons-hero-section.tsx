@@ -94,7 +94,7 @@ const Icon = ({
 
 const FloatingIconsHero = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & FloatingIconsHeroProps
+  Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> & FloatingIconsHeroProps
 >(({ className, title, subtitle, ctaText, ctaHref, secondaryCtaText, secondaryCtaHref, icons, ...props }, ref) => {
   const mouseX = React.useRef(0);
   const mouseY = React.useRef(0);
@@ -114,18 +114,13 @@ const FloatingIconsHero = React.forwardRef<
       )}
       {...props}
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-40" />
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-orange-50 rounded-full blur-3xl opacity-60" />
-      </div>
+      {/* Subtle radial glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(249,115,22,0.06),transparent)] pointer-events-none" />
 
       {/* Floating icons */}
-      <div className="absolute inset-0 w-full h-full">
-        {icons.map((iconData, index) => (
-          <Icon key={iconData.id} mouseX={mouseX} mouseY={mouseY} iconData={iconData} index={index} />
-        ))}
-      </div>
+      {icons.map((iconData, index) => (
+        <Icon key={iconData.id} mouseX={mouseX} mouseY={mouseY} iconData={iconData} index={index} />
+      ))}
 
       {/* Hero content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
@@ -133,9 +128,9 @@ const FloatingIconsHero = React.forwardRef<
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold mb-8"
+          className="inline-flex items-center gap-2 bg-orange-100 border border-orange-200 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-8"
         >
-          <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
+          <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
           IT-konsulent & AI-specialist · Brøndby Strand, Danmark
         </motion.div>
 
@@ -165,14 +160,14 @@ const FloatingIconsHero = React.forwardRef<
         >
           <a
             href={ctaHref}
-            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-orange-200 hover:shadow-orange-300 text-base"
+            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 text-base"
           >
             {ctaText}
           </a>
           {secondaryCtaText && secondaryCtaHref && (
             <a
               href={secondaryCtaHref}
-              className="inline-flex items-center gap-2 border-2 border-gray-200 text-gray-900 hover:border-orange-500 hover:text-orange-500 font-bold px-8 py-4 rounded-full transition-all duration-200 text-base"
+              className="inline-flex items-center gap-2 border-2 border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900 font-bold px-8 py-4 rounded-full transition-all duration-200 text-base"
             >
               {secondaryCtaText}
             </a>

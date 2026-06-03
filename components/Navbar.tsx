@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown, Bot, Code2, Shield, Server } from 'lucide-react'
@@ -41,11 +42,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 bg-orange-500 rounded-lg flex items-center justify-center group-hover:bg-orange-600 transition-colors">
-              <span className="text-white font-black text-sm">TJ</span>
-            </div>
-            <span className="font-bold text-gray-900 text-lg tracking-tight">
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <span className="font-bold text-gray-900 text-lg tracking-tight group-hover:text-orange-500 transition-colors">
               TJ-Consult
             </span>
           </Link>

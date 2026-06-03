@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, Phone, MapPin, Linkedin, ExternalLink } from 'lucide-react'
 
 const footerLinks = {
@@ -22,11 +23,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-black text-sm">TJ</span>
-              </div>
-              <span className="font-bold text-white text-xl tracking-tight">TJ-Consult</span>
+            <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
+              <span className="font-bold text-white text-xl tracking-tight group-hover:text-orange-400 transition-colors">TJ-Consult</span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
               Intelligent IT-konsulting og AI-løsninger der skaber reel forretningsværdi. Fra strategi til implementering.
