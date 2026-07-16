@@ -6,7 +6,6 @@ const footerLinks = {
   ydelser: [
     { href: '/services#ai', label: 'AI & Automatisering' },
     { href: '/services#software', label: 'Softwareudvikling' },
-    { href: '/services#sikkerhed', label: 'IT-Sikkerhed' },
     { href: '/services#infrastruktur', label: 'IT-Infrastruktur' },
   ],
   sider: [
@@ -27,7 +26,7 @@ export default function Footer() {
               <span className="font-bold text-white text-xl tracking-tight group-hover:text-orange-400 transition-colors">TJ-Consult</span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
-              Intelligent IT-konsulting og AI-løsninger der skaber reel forretningsværdi. Fra strategi til implementering.
+              Freelance IT-konsulent og AI-rådgivning der skaber reel forretningsværdi. Fra strategi til implementering.
             </p>
             <div className="space-y-3">
               <a
@@ -99,7 +98,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © 2026 TJ-Consult — Yousaf Javaid
+            © 2026 TJ-Consult, Yousaf Javaid
           </p>
           <div className="flex items-center gap-4">
             <a

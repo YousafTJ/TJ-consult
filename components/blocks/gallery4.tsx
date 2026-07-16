@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { Kicker } from "@/components/ui/Kicker";
 import {
   Carousel,
   CarouselApi,
@@ -53,12 +55,7 @@ const Gallery4 = ({
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-4">
-            <div className="inline-flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-              <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">
-                Hvad jeg har leveret
-              </span>
-            </div>
+            <Kicker>Hvad jeg har leveret</Kicker>
             <h2 className="text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl tracking-tight">
               {title}
             </h2>
@@ -101,7 +98,7 @@ const Gallery4 = ({
                 key={item.id}
                 className="pl-6 basis-full md:basis-1/2 lg:basis-1/3"
               >
-                <a href={item.href} className="group block rounded-xl">
+                <Link href={item.href} className="group block rounded-xl">
                   <div className="relative h-[27rem] overflow-hidden rounded-xl">
                     <img
                       src={item.image}
@@ -113,12 +110,15 @@ const Gallery4 = ({
                       <div className="mb-2 pt-4 text-xl font-semibold md:mb-3">
                         {item.title}
                       </div>
-                      <div className="mb-8 line-clamp-2 text-sm text-gray-200 md:mb-12 lg:mb-9">
+                      <div className="mb-3 line-clamp-2 text-sm text-gray-200 md:mb-4">
                         {item.description}
                       </div>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-orange-400 group-hover:text-orange-300 transition-colors">
+                        Læs mere <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
                     </div>
                   </div>
-                </a>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>

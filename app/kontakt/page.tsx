@@ -4,35 +4,35 @@ import { useState, useRef } from 'react'
 import { Send, Mail, Phone, MapPin, ExternalLink, CheckCircle2, Clock, MessageSquare } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import { Button } from '@/components/ui/Button'
+import { Kicker } from '@/components/ui/Kicker'
 
 const serviceOptions = [
   'AI & Automatisering',
   'Softwareudvikling',
-  'IT-Sikkerhed & Compliance',
   'IT-Infrastruktur & Konsulent',
   'Generel rådgivning',
   'Andet',
 ]
 
 const techIcons = [
-  'https://cdn.simpleicons.org/python/F97316',
-  'https://cdn.simpleicons.org/microsoftazure/0078D4',
-  'https://cdn.simpleicons.org/docker/2496ED',
-  'https://cdn.simpleicons.org/typescript/3178C6',
-  'https://cdn.simpleicons.org/react/61DAFB',
-  'https://cdn.simpleicons.org/nodedotjs/339933',
-  'https://cdn.simpleicons.org/kubernetes/326CE5',
-  'https://cdn.simpleicons.org/postgresql/336791',
-  'https://cdn.simpleicons.org/mongodb/47A248',
-  'https://cdn.simpleicons.org/github/111827',
-  'https://cdn.simpleicons.org/nextdotjs/111827',
-  'https://cdn.simpleicons.org/terraform/7B42BC',
-  'https://cdn.simpleicons.org/tailwindcss/06B6D4',
-  'https://cdn.simpleicons.org/mysql/4479A1',
-  'https://cdn.simpleicons.org/linux/111827',
-  'https://cdn.simpleicons.org/redis/DC382D',
-  'https://cdn.simpleicons.org/amazonaws/FF9900',
-  'https://cdn.simpleicons.org/openai/111827',
+  'https://cdn.simpleicons.org/python',
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+  'https://cdn.simpleicons.org/docker',
+  'https://cdn.simpleicons.org/typescript',
+  'https://cdn.simpleicons.org/react',
+  'https://cdn.simpleicons.org/nodedotjs',
+  'https://cdn.simpleicons.org/kubernetes',
+  'https://cdn.simpleicons.org/postgresql',
+  'https://cdn.simpleicons.org/vmware',
+  'https://cdn.simpleicons.org/github',
+  'https://cdn.simpleicons.org/nextdotjs',
+  'https://cdn.simpleicons.org/terraform',
+  'https://cdn.simpleicons.org/n8n',
+  'https://cdn.simpleicons.org/mysql',
+  'https://cdn.simpleicons.org/linux',
+  'https://cdn.simpleicons.org/tailwindcss',
+  'https://cdn.simpleicons.org/mongodb',
+  'https://cdn.simpleicons.org/redis',
 ]
 
 interface FormState {
@@ -113,18 +113,13 @@ export default function KontaktPage() {
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-orange-100 border border-orange-200 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold self-start">
-            <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
-            Klar til at hjælpe · Svar inden for 24 timer
-          </div>
+          <Kicker withDot className="self-start">Klar til at hjælpe · Svar inden for 24 timer</Kicker>
 
           {/* Supercharge-style card */}
           <div className="border border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 grid sm:grid-cols-2 gap-6 sm:gap-10 items-center bg-white/80">
             {/* Left: big heading + description + buttons */}
             <div>
-              <p className="uppercase text-xs sm:text-sm font-semibold text-gray-500 mb-2 sm:mb-3">
-                IT-konsulent & AI-specialist
-              </p>
+              <Kicker className="mb-2 sm:mb-3">IT-konsulent & AI-specialist</Kicker>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-3 sm:mb-4 leading-[1.05] tracking-tight">
                 IT der{' '}
                 <span className="text-orange-500">virker.</span>
@@ -133,7 +128,7 @@ export default function KontaktPage() {
                 <span className="text-orange-500">leverer.</span>
               </h1>
               <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                Intelligent IT-rådgivning og AI-løsninger der skaber reel, målbar forretningsmæssig værdi — fra strategi til implementering.
+                Intelligent IT-rådgivning og AI-løsninger der skaber reel, målbar forretningsmæssig værdi, fra strategi til implementering.
               </p>
               <div className="flex gap-3 sm:gap-4 flex-wrap">
                 <Button

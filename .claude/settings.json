@@ -1,4 +1,55 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_FLOW_V3_ENABLED": "true",
+    "CLAUDE_FLOW_HOOKS_ENABLED": "true"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npx @claude-flow*)",
+      "Bash(npx claude-flow*)",
+      "Bash(node .claude/*)",
+      "mcp__claude-flow__:*",
+      "Bash(npx playwright *)",
+      "WebSearch",
+      "Bash(node scripts/inspiration-screenshots.mjs)",
+      "Bash(node scripts/techstack-check.mjs)",
+      "Read(//tmp/imgcheck/**)",
+      "Read(//c/tmp/imgcheck/**)",
+      "Bash(mkdir -p /c/Users/PC/AppData/Local/Temp/claude/c--Users-PC-AI-OS-projects-TJ-consult/573c459a-171b-4f98-b0a5-f890a4558c4f/scratchpad/imgcheck)",
+      "Bash(cp /tmp/imgcheck/*.jpg /c/Users/PC/AppData/Local/Temp/claude/c--Users-PC-AI-OS-projects-TJ-consult/573c459a-171b-4f98-b0a5-f890a4558c4f/scratchpad/imgcheck/)",
+      "Read(//c/Users/PC/AppData/Local/Temp/claude/c--Users-PC-AI-OS-projects-TJ-consult/573c459a-171b-4f98-b0a5-f890a4558c4f/scratchpad/**)",
+      "Bash(npx tsc *)",
+      "Bash(node scripts/services-check.mjs)",
+      "Bash(node -e ' *)",
+      "Bash(python3 -c \"from PIL import Image; im=Image.open\\('scripts/screenshots/services-full.png'\\); print\\(im.size\\)\")",
+      "Bash(node scripts/services-section-check.mjs)",
+      "Bash(rm -f scripts/techstack-check.mjs scripts/services-check.mjs scripts/services-section-check.mjs scripts/screenshots/techstack-check.png scripts/screenshots/services-full.png scripts/screenshots/services-ai-section.png scripts/screenshots/services-sikkerhed-section.png scripts/screenshots/services-software-section.png scripts/screenshots/services-infra-section.png)",
+      "Bash(rm -rf /tmp/imgcheck)",
+      "Bash(curl -s -o /dev/null -w \"slugs.md status: %{http_code}\\\\n\" \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/slugs.md\")",
+      "Bash(curl -s \"https://cdn.simplelogos.com\" -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s \"https://registry.npmjs.org/simple-icons/latest\")",
+      "Bash(curl -s \"https://simpleicons.org/data/icons.json\" -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/slugs.md\" -o /tmp/slugs.md)",
+      "Read(//tmp/**)",
+      "Bash(grep -i \"microsoft\" /tmp/slugs.md)",
+      "Bash(sed -n '/| `Micro/,/| `Mid/p' /tmp/slugs.md)",
+      "Bash(mkdir -p /c/Users/PC/AppData/Local/Temp/claude/c--Users-PC-AI-OS-projects-TJ-consult/573c459a-171b-4f98-b0a5-f890a4558c4f/scratchpad/icons)",
+      "Bash(curl -s -o /c/Users/PC/AppData/Local/Temp/claude/c--Users-PC-AI-OS-projects-TJ-consult/573c459a-171b-4f98-b0a5-f890a4558c4f/scratchpad/icons/azure.svg https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg)",
+      "Read(//c/Users/PC/AppData/Local/Temp/claude/c--Users-PC-AI-OS-projects-TJ-consult/573c459a-171b-4f98-b0a5-f890a4558c4f/scratchpad/icons/**)",
+      "Bash(curl -s -o /c/Users/PC/AppData/Local/Temp/claude/c--Users-PC-AI-OS-projects-TJ-consult/573c459a-171b-4f98-b0a5-f890a4558c4f/scratchpad/icons/postgres.png https://cdn.simpleicons.org/postgresql?w=200)",
+      "Bash(curl -s -o /c/Users/PC/AppData/Local/Temp/claude/c--Users-PC-AI-OS-projects-TJ-consult/573c459a-171b-4f98-b0a5-f890a4558c4f/scratchpad/icons/n8n.png https://cdn.simpleicons.org/n8n?w=200)",
+      "Bash(curl -s -o /c/Users/PC/AppData/Local/Temp/claude/c--Users-PC-AI-OS-projects-TJ-consult/573c459a-171b-4f98-b0a5-f890a4558c4f/scratchpad/icons/vmware.png https://cdn.simpleicons.org/vmware?w=200)",
+      "Bash(curl -s http://localhost:3000/services)",
+      "Bash(python3 -c ' *)",
+      "Bash(rm scripts/services-check.html)",
+      "Bash(node scripts/verify-seo.mjs)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {
@@ -160,23 +211,6 @@
   "statusLine": {
     "type": "command",
     "command": "node -e \"const fs=require('fs'),p=require('path');const d=process.env.CLAUDE_PROJECT_DIR||'.';const f=p.join(d,'.claude/helpers/statusline.cjs');const h=p.join(process.env.USERPROFILE||process.env.HOME||'.', '.claude/helpers/statusline.cjs');require(fs.existsSync(f)?f:h);\""
-  },
-  "permissions": {
-    "allow": [
-      "Bash(npx @claude-flow*)",
-      "Bash(npx claude-flow*)",
-      "Bash(node .claude/*)",
-      "mcp__claude-flow__:*"
-    ],
-    "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)"
-    ]
-  },
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "CLAUDE_FLOW_V3_ENABLED": "true",
-    "CLAUDE_FLOW_HOOKS_ENABLED": "true"
   },
   "claudeFlow": {
     "version": "3.0.0",

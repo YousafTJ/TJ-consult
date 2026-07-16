@@ -1,12 +1,21 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Bot, Code2, Shield, Server, ArrowRight, CheckCircle2 } from 'lucide-react'
+import {
+  Bot, Code2, Server, ArrowRight,
+  Workflow, Cpu, Plug, Database, Compass, Rocket, DatabaseZap,
+  Globe, Layers, Link2, BarChart3, Settings2, Handshake,
+  Building2, Mail, Container, HardDrive, ServerCog, LifeBuoy,
+} from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import FallingItem from '@/components/FallingItem'
+import { Kicker } from '@/components/ui/Kicker'
 
 export const metadata: Metadata = {
-  title: 'Ydelser — AI, Software, Sikkerhed & Infrastruktur',
-  description: 'Se alle TJ-Consult ydelser: AI-agenter, softwareudvikling, IT-sikkerhed og cloud-infrastruktur. 20+ specialiserede IT-ydelser.',
+  title: 'IT-konsulent Ydelser: AI-rådgivning, Softwareudvikling & Infrastruktur',
+  description: 'Se alle TJ-Consult ydelser: AI-konsulent og AI-rådgivning, skræddersyet softwareudvikling, systemintegration og IT-infrastruktur. 19 specialiserede IT-ydelser fra en freelance IT-konsulent.',
+  alternates: {
+    canonical: '/services',
+  },
 }
 
 const categories = [
@@ -14,33 +23,64 @@ const categories = [
     id: 'ai',
     icon: Bot,
     title: 'AI & Automatisering',
-    description: 'Fremtidens teknologi implementeret i dag. Fra AI-agenter til komplette AI-operative systemer der transformerer din forretning.',
+    description: 'AI-rådgivning og AI-konsulentydelser der omsætter fremtidens teknologi til forretningsværdi i dag. Fra AI-agenter til komplette AI-operative systemer der transformerer din forretning.',
     color: 'purple',
     services: [
       {
         title: 'AI-Agenter & Workflow-automatisering',
-        description: 'Få bygget intelligente AI-agenter der håndterer gentagne opgaver automatisk — kundeservice, databehandling, lead-kvalificering, rapportering og meget mere. Spar tid, reducer fejl og skaler uden at ansætte.',
-        outcomes: ['Automatiserede gentagne opgaver', 'Reduceret fejlrate', 'Skalering uden ekstra personale'],
+        icon: Workflow,
+        description: 'Få bygget intelligente AI-agenter der håndterer gentagne opgaver automatisk: kundeservice, databehandling, lead-kvalificering, rapportering og meget mere. Spar tid, reducer fejl og skaler uden at ansætte.',
+        tags: ['AI Agents', 'Automatisering', 'Python', '24/7'],
+        result: 'Automatiserede opgaver uden ekstra personale',
+        image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&q=80',
       },
       {
         title: 'AI Operative System (AI OS)',
-        description: 'Et skræddersyet AI-operativsystem til din virksomhed — en central AI-hub der koordinerer agenter, hukommelse, opgaver og integrationer. Din virksomhed får en intelligent assistent der kender jeres processer, data og mål.',
-        outcomes: ['Centraliseret AI-koordinering', 'Intelligent proceshukommelse', 'Skalerbar AI-infrastruktur'],
+        icon: Cpu,
+        description: 'Et skræddersyet AI-operativsystem til din virksomhed: en central AI-hub der koordinerer agenter, hukommelse, opgaver og integrationer. Din virksomhed får en intelligent assistent der kender jeres processer, data og mål.',
+        tags: ['AI OS', 'Hub', 'Integrationer', 'Hukommelse'],
+        result: 'Central AI-hub for hele virksomheden',
+        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
       },
       {
         title: 'MCP-Server Konfiguration & Integration',
-        description: 'Model Context Protocol (MCP) er fremtidens måde at forbinde AI med dine systemer på. Jeg opsætter og konfigurerer MCP-servere der giver dine AI-tools adgang til kalender, filer, databaser, CRM og andet — sikkert og kontrolleret.',
-        outcomes: ['Sikker AI-systemintegration', 'Adgang til alle dine datakilder', 'Kontrolleret og auditbar'],
+        icon: Plug,
+        description: 'Model Context Protocol (MCP) er fremtidens måde at forbinde AI med dine systemer på. Jeg opsætter og konfigurerer MCP-servere der giver dine AI-tools adgang til kalender, filer, databaser, CRM og andet, sikkert og kontrolleret.',
+        tags: ['MCP', 'API', 'Integration', 'Sikkerhed'],
+        result: 'Sikker adgang til alle jeres datakilder',
+        image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80',
       },
       {
         title: 'RAG-Systemer & Vidensbaser',
-        description: 'Byg AI-systemer der kender din virksomheds data. Med RAG (Retrieval-Augmented Generation) kan din AI svare præcist på spørgsmål baseret på jeres egne dokumenter, manualer og databaser.',
-        outcomes: ['AI med din virksomheds viden', 'Præcise svar baseret på jeres data', 'Reduceret hallucination'],
+        icon: Database,
+        description: 'Byg AI-systemer der kender din virksomheds data. Med RAG (Retrieval-Augmented Generation) sætter jeg jeres data korrekt op: struktureret, renset og indekseret, så jeres AI får den rette viden og evnen til at præstere. Resultatet er en AI der svarer præcist på spørgsmål baseret på jeres egne dokumenter, manualer og databaser, i stedet for at gætte.',
+        tags: ['RAG', 'Vector DB', 'LLM', 'Dokumenter'],
+        result: '5.000+ sider dokumentation gjort søgbare',
+        image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
       },
       {
         title: 'AI-Strategi & Rådgivning',
-        description: 'Ikke sikker på hvor AI passer ind i din forretning? Jeg gennemgår jeres processer og identificerer de steder hvor AI giver reel ROI — og laver en konkret plan for implementering.',
-        outcomes: ['Klar AI-implementeringsplan', 'Identificerede ROI-muligheder', 'Prioriteret roadmap'],
+        icon: Compass,
+        description: 'Ikke sikker på hvor AI passer ind i din forretning? Jeg gennemgår jeres processer, identificerer de steder hvor AI giver reel ROI og laver en konkret plan for implementering.',
+        tags: ['Strategi', 'ROI', 'Rådgivning', 'Roadmap'],
+        result: 'Konkret plan for AI-implementering',
+        image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+      },
+      {
+        title: 'Fuld RAG- & AI-Agent Implementering',
+        icon: Rocket,
+        description: 'Komplet opsætning fra bunden: jeres virksomheds data bliver samlet, struktureret og gjort tilgængelig i en RAG-vidensdatabase. Derefter bygger jeg AI-agenter ovenpå, der selvstændigt udfører jeres manuelle og langsomme processer korrekt hver gang. Fra rådata til en fuldt fungerende AI-arbejdskraft.',
+        tags: ['RAG', 'AI Agents', 'Vidensdatabase', 'Procesautomatisering'],
+        result: 'Manuelle processer automatiseret ende-til-ende',
+        image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
+      },
+      {
+        title: 'AI-Klar Datainfrastruktur',
+        icon: DatabaseZap,
+        description: 'Jeres data er jeres største aktiv, men kun hvis AI\'en faktisk kan bruge den. Jeg gør virksomhedens data AI-klar: struktureret og indekseret til RAG, opsætter vector-databaser til semantisk søgning, og bygger data-pipelines der løbende fodrer jeres AI-agenter med opdateret information.',
+        tags: ['Vector DB', 'Data-Pipelines', 'Semantisk Søgning', 'RAG'],
+        result: 'Data der er strømlinet og klar til AI',
+        image: 'https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=800&q=80',
       },
     ],
   },
@@ -48,67 +88,56 @@ const categories = [
     id: 'software',
     icon: Code2,
     title: 'Softwareudvikling',
-    description: 'Skræddersyede digitale løsninger bygget med moderne teknologi — fra simpel landing page til komplekse SaaS-produkter.',
+    description: 'Skræddersyet softwareudvikling og systemintegration bygget med moderne teknologi, fra simpel landing page til komplekse SaaS-produkter.',
     color: 'blue',
     services: [
       {
         title: 'Hjemmesider & Webapplikationer',
-        description: 'Professionelle, hurtige og mobilvenlige hjemmesider og webapps bygget med moderne teknologi (Next.js, React). Fra landingpages til komplekse systemer — alt er skræddersyet til dit behov.',
-        outcomes: ['Mobiloptimeret og hurtig', 'SEO-venlig struktur', 'Moderne og professionel design'],
-      },
-      {
-        title: 'Bookingsystemer',
-        description: 'Skræddersyede bookingløsninger til din branche — med kalenderintegration, automatiske bekræftelser, betaling og brugeradministration. Slut med manuelle bookinger og dobbelttilmeldinger.',
-        outcomes: ['Automatiske bekræftelser', 'Kalenderintegration', 'Betalingshåndtering'],
+        icon: Globe,
+        description: 'Professionelle, hurtige og mobilvenlige hjemmesider og webapps bygget med moderne teknologi (Next.js, React). Fra landingpages til komplekse systemer, alt skræddersyet til dit behov.',
+        tags: ['Next.js', 'React', 'SEO', 'Responsive'],
+        result: 'Hurtig, mobiloptimeret og SEO-klar',
+        image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
       },
       {
         title: 'SaaS & Skræddersyet Systemudvikling',
-        description: 'Har du en idé til et produkt eller et internt system? Jeg bygger det fra bunden — skalerbart, sikkert og med fokus på brugeroplevelse. API-integrationer, dashboards, automatisering og databaser inkluderet.',
-        outcomes: ['Skalerbar arkitektur', 'Komplet backend & frontend', 'Løbende support'],
+        icon: Layers,
+        description: 'Har du en idé til et produkt eller et internt system? Jeg bygger det fra bunden: skalerbart, sikkert og med fokus på brugeroplevelse. API-integrationer, dashboards, automatisering og databaser inkluderet.',
+        tags: ['SaaS', 'Fullstack', 'API', 'Database'],
+        result: 'Skalerbar arkitektur fra dag ét',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
       },
       {
-        title: 'API-Integrationer',
-        description: 'Forbind dine eksisterende systemer med hinanden. Jeg integrerer CRM, regnskabssystemer, betalingsløsninger, kommunikationsplatforme og alt andet via API — så data flyder automatisk.',
-        outcomes: ['Automatisk datasynkronisering', 'Reduceret manuelt arbejde', 'Real-time integrations'],
+        title: 'API & System Integrationer',
+        icon: Link2,
+        description: 'Forbind dine eksisterende systemer med hinanden. Jeg integrerer CRM, regnskabssystemer, betalingsløsninger, kommunikationsplatforme og alt andet via API, så data flyder automatisk.',
+        tags: ['API', 'Webhooks', 'Automatisering', 'Data'],
+        result: 'Data flyder automatisk mellem systemer',
+        image: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&q=80',
       },
       {
         title: 'Automatiserede Rapporterings- & Dashboardsystemer',
-        description: "Få automatiske rapporter og live-dashboards der viser præcis det din virksomhed har brug for at se — salgsdata, driftsstatus, KPI'er — uden manuel opdatering.",
-        outcomes: ['Live KPI-dashboards', 'Automatiske rapporter', 'Datadrevne beslutninger'],
-      },
-    ],
-  },
-  {
-    id: 'sikkerhed',
-    icon: Shield,
-    title: 'IT-Sikkerhed & Compliance',
-    description: 'Proaktiv sikkerhed der beskytter din virksomhed — fra risikovurdering og penetration testing til SIEM og compliance.',
-    color: 'green',
-    services: [
-      {
-        title: 'IT-Sikkerhedsrådgivning',
-        description: 'Jeg gennemgår jeres IT-miljø og identificerer sårbarheder, risici og huller i sikkerhedspolitikken — og giver en klar handlingsplan. Ingen teknisk snak for teknologiens skyld — kun konkrete anbefalinger.',
-        outcomes: ['Komplet sårbarhedsoversigt', 'Prioriteret handlingsplan', 'Reduceret risikoeksponering'],
+        icon: BarChart3,
+        description: "Få automatiske rapporter og live-dashboards der viser præcis det din virksomhed har brug for at se: salgsdata, driftsstatus og KPI'er, uden manuel opdatering.",
+        tags: ['Dashboard', 'KPI', 'Rapportering', 'Live-data'],
+        result: "Live KPI'er uden manuel opdatering",
+        image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80',
       },
       {
-        title: 'Kryptering & Datakryptering',
-        description: 'Implementering af end-to-end kryptering for data i hvile og transit. Jeg opsætter og konfigurerer krypteringsløsninger der beskytter jeres følsomme data — fra databasekryptering til sikker kommunikation.',
-        outcomes: ['End-to-end kryptering', 'Krypterede databaser og filer', 'Sikker datatransmission'],
+        title: 'Skræddersyet Interne Systemer',
+        icon: Settings2,
+        description: 'Skræddersyet interne systemer med alle de funktioner I skal bruge, og ingen af dem I ikke gør. Jeg bygger interne værktøjer der passer 100% til jeres arbejdsgange, fra ressourceplanlægning til projektstyring og intern dataregistrering.',
+        tags: ['Internt Værktøj', 'Skræddersyet', 'Workflow', 'Database'],
+        result: 'Præcis de funktioner I faktisk har brug for',
+        image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
       },
       {
-        title: 'SIEM & Overvågning',
-        description: 'Opsætning af Security Information and Event Management (SIEM) systemer — fx Microsoft Sentinel — der overvåger jeres netværk og advarer ved mistænkelig aktivitet.',
-        outcomes: ['Real-time trusselsdetektering', 'Microsoft Sentinel opsætning', 'Automatiske sikkerhedsadvarsler'],
-      },
-      {
-        title: 'Certifikatshåndtering & PKI',
-        description: 'Design og implementering af Public Key Infrastructure (PKI) og håndtering af SSL/TLS-certifikater, kodesigneringscertifikater og interne CA-løsninger. Sikrer at jeres systemer altid er korrekt certificerede.',
-        outcomes: ['PKI-infrastruktur opsætning', 'Automatisk certifikatfornyelse', 'SSL/TLS-styring på tværs af systemer'],
-      },
-      {
-        title: 'Firewall, Netværk & Adgangsstyring',
-        description: 'Opsætning og hardening af firewall-regler, netværkssegmentering og adgangsstyring. Sørger for at kun de rigtige folk har adgang til de rigtige systemer.',
-        outcomes: ['Hærdet firewall-konfiguration', 'Netværkssegmentering', 'Least-privilege adgangsstyring'],
+        title: 'Kundeportaler',
+        icon: Handshake,
+        description: 'Kundeportaler hvor dig og dine kunder kan holde kontakten og forbedre relationen: dokumentdeling, statusopdateringer, beskeder og selvbetjening samlet ét sted. Styrk kunderelationen og reducer antallet af mails og telefonopkald.',
+        tags: ['Kundeportal', 'Selvbetjening', 'Kommunikation', 'Dashboard'],
+        result: 'Bedre kunderelationer, færre mails frem og tilbage',
+        image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
       },
     ],
   },
@@ -116,38 +145,56 @@ const categories = [
     id: 'infrastruktur',
     icon: Server,
     title: 'IT-Infrastruktur & Konsulent',
-    description: 'Stabil, skalerbar og sikker IT-infrastruktur der understøtter din vækst — cloud, on-premise og hybridløsninger.',
+    description: 'Stabil, skalerbar og sikker IT-infrastruktur og server hosting der understøtter din vækst: cloud migrering, on-premise og hybridløsninger.',
     color: 'orange',
     services: [
       {
         title: 'Microsoft 365 & Exchange Opsætning',
-        description: 'Fuld opsætning og konfiguration af Microsoft 365 — Exchange Online, Teams, SharePoint, OneDrive og Azure AD. Inkl. migrering fra eksisterende systemer.',
-        outcomes: ['Komplet M365-opsætning', 'Exchange Online migrering', 'Azure AD integration'],
+        icon: Building2,
+        description: 'Fuld opsætning og konfiguration af Microsoft 365: Exchange Online, Teams, SharePoint, OneDrive og Azure AD. Inkl. migrering fra eksisterende systemer.',
+        tags: ['Microsoft 365', 'Exchange', 'Azure AD', 'Teams'],
+        result: 'Komplet migrering uden driftsstop',
+        image: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=800&q=80',
       },
       {
         title: 'Mailserver & Domæne',
-        description: 'Opsætning af professionel mailserver, domæne-konfiguration (DNS, MX, SPF, DKIM, DMARC) og sikkerhed mod phishing og spam.',
-        outcomes: ['Anti-spam og phishing-beskyttelse', 'Korrekt DNS-konfiguration', 'Professionel mailopsætning'],
+        icon: Mail,
+        description: 'Fuld opsætning og konfiguration af jeres domæne, så alting fungerer sikkert og optimalt. Det inkluderer korrekt opsætning af mailserver og rådgivning ift. optimering af jeres mail-flow, så mails rammer indbakken i stedet for at ryge i spam.',
+        tags: ['DNS', 'SPF/DKIM/DMARC', 'Mailserver', 'Mail-flow'],
+        result: 'Mails rammer indbakken frem for spamfilteret',
+        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
       },
       {
-        title: 'Cloud & Azure Infrastruktur',
-        description: 'Design og implementering af cloud-infrastruktur på Microsoft Azure — virtuelle maskiner, storage, netværk, sikkerhed og skalerbarhed. Infrastructure as Code med Terraform.',
-        outcomes: ['Skalerbar Azure-infrastruktur', 'Terraform IaC', 'Cost-optimeret cloud-setup'],
-      },
-      {
-        title: 'Active Directory & Windows Server',
-        description: 'Opsætning og administration af Active Directory, Windows Server, Group Policies og brugeradministration. Til virksomheder der har behov for en struktureret IT-miljø.',
-        outcomes: ['Centraliseret brugeradministration', 'Group Policy opsætning', 'Struktureret AD-hierarki'],
+        title: 'Server Hosting & Drift (Linux & Windows)',
+        icon: ServerCog,
+        description: 'Professionel drift og administration af jeres servere, uanset om det er Linux eller Windows. Jeg sætter systemerne korrekt op, holder dem opdaterede og kørende, og sikrer at logging og overvågning er på plads, så I altid ved hvad der sker. Data adskilles fra systemdisken, så en systemfejl eller crash aldrig går ud over jeres data.',
+        tags: ['Linux', 'Windows Server', 'Logging & Overvågning', 'Sikker Drift'],
+        result: 'Stabil drift med fuld synlighed, data er altid adskilt og sikret',
+        image: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&q=80',
       },
       {
         title: 'Docker & Containerisering',
-        description: 'Containerisering af applikationer med Docker og Kubernetes — hurtigere deployments, bedre stabilitet og nem skalering.',
-        outcomes: ['Containeriserede applikationer', 'Kubernetes orkestrering', 'Hurtigere deployments'],
+        icon: Container,
+        description: 'Docker-containerisering af jeres applikationer. Systemerne bliver pakket rigtigt ind, kører isoleret og ens i alle miljøer, og er klar til hurtig og stabil hosting uanset skala.',
+        tags: ['Docker', 'Kubernetes', 'Containere', 'Hosting'],
+        result: 'Systemer pakket rigtigt ind og hostet korrekt',
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
       },
       {
-        title: 'DevOps & CI/CD Pipelines',
-        description: 'Automatisér jeres deployment-proces med CI/CD pipelines. Kode der testes og deployes automatisk — færre fejl, hurtigere releases.',
-        outcomes: ['Automatiseret build & deploy', 'Reducerede fejl i produktion', 'Hurtigere release-cyklus'],
+        title: 'VM & Server-Virtualisering',
+        icon: HardDrive,
+        description: 'Virtualisering af jeres servere med VMware. Kør flere isolerede systemer på samme hardware, med nem skalering, snapshots og hurtig disaster recovery. Den rigtige måde at hoste jeres infrastruktur på.',
+        tags: ['VMware', 'Virtualisering', 'Snapshots', 'Disaster Recovery'],
+        result: 'Isolerede, skalerbare og sikre servermiljøer',
+        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+      },
+      {
+        title: 'Backup & Robusthed',
+        icon: LifeBuoy,
+        description: 'En backup er kun værd noget, hvis gendannelsen rent faktisk virker, og det har de færreste testet. Jeg opsætter en gennemtestet backup-strategi med reelle gendannelsestests, disaster recovery-planer til når uheldet er ude, og høj tilgængelighed/failover der holder jeres systemer kørende.',
+        tags: ['Backup', 'Disaster Recovery', 'Failover', 'Høj Tilgængelighed'],
+        result: 'Testet gendannelse frem for bare backup på papiret',
+        image: 'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=800&q=80',
       },
     ],
   },
@@ -172,15 +219,6 @@ const colorMap = {
     headerBg: 'from-blue-50 to-sky-50',
     dot: 'bg-blue-500',
   },
-  green: {
-    bg: 'bg-green-50',
-    text: 'text-green-600',
-    icon: 'bg-green-100 text-green-500',
-    badge: 'bg-green-50 text-green-600',
-    border: 'border-green-100',
-    headerBg: 'from-green-50 to-emerald-50',
-    dot: 'bg-green-500',
-  },
   orange: {
     bg: 'bg-orange-50',
     text: 'text-orange-600',
@@ -192,23 +230,39 @@ const colorMap = {
   },
 }
 
+const servicesJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: categories.flatMap((category) =>
+    category.services.map((service) => ({
+      '@type': 'Service',
+      name: service.title,
+      description: service.description,
+      serviceType: category.title,
+      provider: { '@type': 'ProfessionalService', name: 'TJ-Consult' },
+      areaServed: { '@type': 'Country', name: 'Denmark' },
+    }))
+  ),
+}
+
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
       {/* Page Hero */}
       <AnimatedSection>
       <section className="bg-gray-900 text-white py-12 sm:py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-            <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Alle ydelser</span>
-          </div>
+          <Kicker className="mb-6">Alle ydelser</Kicker>
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black mb-4 sm:mb-6 tracking-tight">
             Hvad kan jeg{' '}
             <span className="text-orange-500">bygge for dig?</span>
           </h1>
           <p className="text-base sm:text-xl text-gray-400 max-w-2xl leading-relaxed mb-8 sm:mb-10">
-            20+ specialiserede IT-ydelser fordelt på 4 domæner. Fra AI-agenter til cloud-infrastruktur — alt leveret med fokus på din forretningsmæssige bundlinje.
+            19 specialiserede IT-ydelser fra en freelance IT-konsulent, fordelt på 3 domæner. Fra AI-rådgivning til IT-infrastruktur, alt leveret med fokus på din forretningsmæssige bundlinje.
           </p>
 
           {/* Quick nav */}
@@ -277,25 +331,44 @@ export default function ServicesPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {category.services.map((service, serviceIndex) => (
                   <FallingItem key={service.title} index={serviceIndex}>
-                  <div
-                    className="relative bg-white rounded-2xl border border-gray-100 p-6 pl-8 hover:shadow-xl hover:border-gray-200 hover:shadow-gray-100/80 transition-all duration-300 hover:-translate-y-1.5 group overflow-hidden h-full"
-                  >
-                    {/* Left accent bar */}
-                    <div className={`absolute left-0 top-4 bottom-4 w-1 rounded-full ${colors.dot} opacity-70 group-hover:opacity-100 group-hover:top-2 group-hover:bottom-2 transition-all duration-300`} />
+                  <div className="h-full rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 overflow-hidden group">
+                    {/* Image */}
+                    <div className="relative h-48 overflow-hidden bg-gray-100">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                      <span className={`absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-full ${colors.badge}`}>
+                        {category.title}
+                      </span>
+                    </div>
 
-                    <h3 className="font-bold text-gray-900 text-base mb-3 leading-tight">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                      {service.description}
-                    </p>
-                    <div className="space-y-2 pt-4 border-t border-gray-50">
-                      {service.outcomes.map((outcome) => (
-                        <div key={outcome} className="flex items-start gap-2">
-                          <CheckCircle2 className={`w-3.5 h-3.5 ${colors.text} flex-shrink-0 mt-0.5`} />
-                          <span className="text-xs text-gray-500 font-medium">{outcome}</span>
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className={`w-9 h-9 ${colors.icon} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                          <service.icon className="w-4 h-4" />
                         </div>
-                      ))}
+                        <h3 className="font-bold text-gray-900 text-base leading-tight">{service.title}</h3>
+                      </div>
+
+                      <p className="text-gray-500 text-sm leading-relaxed mb-4">{service.description}</p>
+
+                      <div className="flex items-center gap-2 mb-4 p-3 bg-gray-50 rounded-xl">
+                        <div className={`w-2 h-2 rounded-full flex-shrink-0 ${colors.dot}`} />
+                        <span className="text-sm font-semibold text-gray-700">{service.result}</span>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1.5">
+                        {service.tags.map((tag) => (
+                          <span key={tag} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-md font-medium">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   </FallingItem>

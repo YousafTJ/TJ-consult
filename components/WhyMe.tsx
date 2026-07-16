@@ -1,12 +1,13 @@
 'use client'
 import { Zap, Target, MessageSquare, Layers } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Kicker } from '@/components/ui/Kicker'
 
 const reasons = [
   {
     icon: Layers,
     title: 'Bred teknisk ekspertise',
-    description: 'Fra AI og softwareudvikling til sikkerhed og cloud-infrastruktur — jeg dækker hele IT-stacken og kan løse tværgående udfordringer uden at hyre 5 specialister.',
+    description: 'Fra AI og softwareudvikling til sikkerhed og cloud-infrastruktur. Jeg dækker hele IT-stacken og kan løse tværgående udfordringer uden at hyre 5 specialister.',
   },
   {
     icon: Target,
@@ -16,7 +17,7 @@ const reasons = [
   {
     icon: Zap,
     title: 'Hurtig og præcis levering',
-    description: 'Erfaring med at levere på tid og inden for scope. Jeg sætter barren højt, kommunikerer klart og leverer det der er aftalt — uden undskyldninger.',
+    description: 'Erfaring med at levere på tid og inden for scope. Jeg sætter barren højt, kommunikerer klart og leverer det der er aftalt, uden undskyldninger.',
   },
   {
     icon: MessageSquare,
@@ -37,16 +38,13 @@ export default function WhyMe() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-            <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Hvorfor TJ-Consult?</span>
-          </div>
+          <Kicker className="mb-4">Hvorfor TJ-Consult?</Kicker>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Ekspertise der{' '}
             <span className="text-orange-500">faktisk leverer</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Det er ikke teknologien der afgør om et projekt lykkes — det er den person der implementerer den.
+            Det er ikke teknologien der afgør om et projekt lykkes. Det er den person der implementerer den.
           </p>
         </motion.div>
 

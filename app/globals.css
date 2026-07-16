@@ -284,6 +284,63 @@ body {
 .uv-submit-btn:active { transform: scale(0.97); }
 .uv-submit-btn:disabled { opacity: 0.55; cursor: not-allowed; }
 
+/* Eyebrow/badge (uiverse.io "Diagonal Swipe" by SujitAdroja, adapted — pure UI, no button behavior) */
+.kicker-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #EA580C;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid #F97316;
+  padding: 0.35rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: transparent;
+  border-radius: 9999px;
+  overflow: hidden;
+  transition: color 0.6s ease;
+  z-index: 0;
+}
+.kicker-badge::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40%;
+  transform: skewX(20deg);
+  background-color: #F97316;
+  z-index: -1;
+  transition: width 0.6s ease;
+}
+.kicker-badge:hover {
+  color: #fff;
+}
+.kicker-badge:hover::before {
+  width: 180%;
+}
+.kicker-badge--lg {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.875rem;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 600;
+}
+.kicker-badge__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #F97316;
+  flex-shrink: 0;
+  transition: background-color 0.6s ease;
+}
+.kicker-badge--lg:hover .kicker-badge__dot {
+  background-color: #fff;
+}
+
 /* Spinning icon rings for contact page */
 @keyframes spin-fwd {
   from { transform: translate(-50%, -50%) rotate(0deg); }

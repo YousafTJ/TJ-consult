@@ -2,6 +2,7 @@
 
 import AutoScroll from "embla-carousel-auto-scroll";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Kicker } from "@/components/ui/Kicker";
 
 interface Logo {
   id: string;
@@ -22,10 +23,7 @@ const Logos3 = ({
   return (
     <section className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center mb-10">
-        <div className="inline-flex items-center gap-2 mb-4">
-          <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-          <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Tech-stack</span>
-        </div>
+        <Kicker className="mb-4">Tech-stack</Kicker>
         <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
           {heading}
         </h2>
@@ -47,7 +45,7 @@ const Logos3 = ({
                   className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
                 >
                   <div className="mx-8 flex shrink-0 flex-col items-center justify-center gap-2 group">
-                    <div className="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300 border border-gray-700 group-hover:border-orange-500">
+                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-md border border-gray-200 group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-orange-500/20 transition-all duration-300">
                       <img
                         src={logo.image}
                         alt={logo.description}

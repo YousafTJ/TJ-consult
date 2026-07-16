@@ -121,7 +121,7 @@ export default function Hero() {
           <span className="text-orange-500">leverer.</span>
         </>
       }
-      subtitle="Intelligent IT-konsulting og AI-løsninger der skaber reel, målbar forretningsværdi — fra strategi til implementering."
+      subtitle="Freelance IT-konsulent og AI-rådgivning der skaber reel, målbar forretningsværdi, fra strategi til implementering."
       ctaText="Se ydelser →"
       ctaHref="/services"
       secondaryCtaText="Kontakt mig"

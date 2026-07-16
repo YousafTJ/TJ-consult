@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { Kicker } from '@/components/ui/Kicker'
 
 interface SectionHeaderProps {
   eyebrow?: string
@@ -20,14 +21,8 @@ export function SectionHeader({
   return (
     <div className={cn(centered && 'text-center', className)}>
       {eyebrow && (
-        <div className={cn(
-          'inline-flex items-center gap-2 mb-4',
-          centered && 'justify-center'
-        )}>
-          <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">
-            {eyebrow}
-          </span>
+        <div className={cn('mb-4', centered && 'flex justify-center')}>
+          <Kicker>{eyebrow}</Kicker>
         </div>
       )}
       <h2

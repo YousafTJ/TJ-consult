@@ -1,13 +1,13 @@
 'use client'
 
-import { Wrench, Phone, Cpu, Shield, Code2, Network } from 'lucide-react'
+import { Wrench, Phone, Cpu, Shield, Code2, Network, Database } from 'lucide-react'
 import { GlowCard } from '@/components/ui/GlowCard'
 
 const cards = [
   {
     icon: Wrench,
     title: '1.000+ tekniske fejl troubleshootet',
-    description: 'Fra netværksproblemer og servernedbrud til softwarefejl og sikkerhedshændelser — løst over 1.000 tekniske problemer på tværs af virksomheder og brancher.',
+    description: 'Fra netværksproblemer og servernedbrud til softwarefejl og sikkerhedshændelser. Løst over 1.000 tekniske problemer på tværs af virksomheder og brancher.',
     num: '01',
   },
   {
@@ -19,7 +19,7 @@ const cards = [
   {
     icon: Cpu,
     title: 'AI-implementering for virksomheder',
-    description: 'Hjulpet virksomheder med at identificere, planlægge og implementere AI-løsninger — fra simple automations til komplekse agentsystemer.',
+    description: 'Hjulpet virksomheder med at identificere, planlægge og implementere AI-løsninger, fra simple automations til komplekse agentsystemer.',
     num: '03',
   },
   {
@@ -31,14 +31,20 @@ const cards = [
   {
     icon: Code2,
     title: 'Skræddersyet systemudvikling',
-    description: 'Udvikling af forretningsmæssige skræddersyede systemer — CRM-platforme, bookingsystemer, leasing-portaler og automatiserede rapporterings-workflows.',
+    description: 'Udvikling af forretningsmæssige skræddersyede systemer: CRM-platforme, bookingsystemer, leasing-portaler og automatiserede rapporterings-workflows.',
     num: '05',
   },
   {
     icon: Network,
-    title: 'Domæne, mailserver & Exchange Online — +100 kunder',
+    title: 'Domæne, mailserver & Exchange Online til over 100 kunder',
     description: 'Opsætning og konfiguration af domæner, mailservere og Exchange Online for over 100 kunder. DNS, MX, SPF, DKIM, DMARC og Microsoft 365-integration.',
     num: '06',
+  },
+  {
+    icon: Database,
+    title: 'Enterprise data- & systemintegration',
+    description: 'Assisteret og rådgivet enterprise-kunder i korrekt opsætning af datastruktur samt korrekt opsætning af scripts og API-/systemintegrationer på tværs af komplekse virksomhedsmiljøer.',
+    num: '07',
   },
 ]
 

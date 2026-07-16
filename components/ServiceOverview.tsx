@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { Kicker } from '@/components/ui/Kicker'
 
 const CheckIcon = () => (
   <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -16,33 +17,25 @@ const categories = [
   {
     id: 'ai',
     title: 'AI & Automatisering',
-    description: 'Intelligente AI-agenter og automatiserede workflows der sparer tid og skalerer din forretning.',
+    description: 'Intelligente AI-agenter, AI-klar data og automatiserede workflows der sparer tid og skalerer din forretning.',
     href: '/services#ai',
-    services: ['AI-Agenter & Workflows', 'AI Operativt System', 'MCP-Server Integration', 'RAG-Systemer', 'AI-Strategi & Rådgivning'],
+    services: ['AI-Agenter & Workflows', 'AI Operativt System (AI OS)', 'MCP-Server Integration', 'RAG-Systemer & Vidensbaser', 'AI-Klar Datainfrastruktur', 'AI-Strategi & Rådgivning'],
     cta: 'Udforsk AI-ydelser',
   },
   {
     id: 'software',
     title: 'Softwareudvikling',
-    description: 'Skræddersyede webapplikationer, SaaS-produkter og API-integrationer til din forretning.',
+    description: 'Skræddersyede webapplikationer, SaaS-produkter, interne systemer og kundeportaler til din forretning.',
     href: '/services#software',
-    services: ['Hjemmesider & Webapps', 'Bookingsystemer', 'SaaS & Systemudvikling', 'API-Integrationer', 'Dashboards & Rapportering'],
+    services: ['Hjemmesider & Webapps', 'SaaS & Systemudvikling', 'API & System Integrationer', 'Skræddersyet Interne Systemer', 'Kundeportaler', 'Dashboards & Rapportering'],
     cta: 'Udforsk Software-ydelser',
-  },
-  {
-    id: 'sikkerhed',
-    title: 'IT-Sikkerhed & Compliance',
-    description: 'Proaktiv sikkerhed, kryptering og compliance der beskytter din virksomhed mod trusler.',
-    href: '/services#sikkerhed',
-    services: ['IT-Sikkerhedsrådgivning', 'Kryptering & PKI', 'SIEM & Overvågning', 'Certifikatshåndtering', 'Firewall & Adgangsstyring'],
-    cta: 'Udforsk Sikkerhed',
   },
   {
     id: 'infrastruktur',
     title: 'IT-Infrastruktur & Konsulent',
-    description: 'Stabil cloud-infrastruktur, Microsoft 365, Docker og CI/CD til din virksomheds vækst.',
+    description: 'Sikker server-drift, Microsoft 365, virtualisering og robust backup til din virksomheds vækst.',
     href: '/services#infrastruktur',
-    services: ['Microsoft 365 & Exchange', 'Cloud & Azure', 'Active Directory', 'Docker & Kubernetes', 'DevOps & CI/CD'],
+    services: ['Microsoft 365 & Exchange', 'Mailserver & Domæne', 'Server Hosting & Drift', 'Docker & Containerisering', 'VM-Virtualisering', 'Backup & Robusthed'],
     cta: 'Udforsk Infrastruktur',
   },
 ]
@@ -59,20 +52,17 @@ export default function ServiceOverview() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-            <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Ydelser</span>
-          </div>
+          <Kicker className="mb-4">Ydelser</Kicker>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Hvad kan jeg hjælpe med?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Fra AI-systemer til cloud-infrastruktur — bredt ekspertise, konkrete løsninger.
+            Fra AI-rådgivning til cloud-infrastruktur: bredt ekspertise, konkrete løsninger.
           </p>
         </motion.div>
 
         {/* Cards grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {categories.map((cat, index) => (
             <motion.div
               key={cat.id}
@@ -126,7 +116,7 @@ export default function ServiceOverview() {
             href="/services"
             className="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold px-8 py-4 rounded-full transition-all duration-200 text-base"
           >
-            Se alle 20+ ydelser →
+            Se alle 19 ydelser →
           </Link>
           <Link
             href="/om-mig"

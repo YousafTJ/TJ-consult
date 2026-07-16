@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { ArrowRight, Mail, Phone, Calendar } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Kicker } from '@/components/ui/Kicker'
 
 export default function ContactCTA() {
   return (
@@ -19,10 +20,7 @@ export default function ContactCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <div className="inline-flex items-center gap-2 mb-6">
-            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-            <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Kom i gang</span>
-          </div>
+          <Kicker className="mb-6">Kom i gang</Kicker>
 
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
             Klar til at{' '}
@@ -30,7 +28,7 @@ export default function ContactCTA() {
           </h2>
 
           <p className="text-gray-400 text-xl leading-relaxed mb-12 max-w-2xl mx-auto">
-            Fortæl mig om din udfordring — jeg vender tilbage inden for 24 timer med en konkret plan.
+            Fortæl mig om din udfordring, så vender jeg tilbage inden for 24 timer med en konkret plan.
           </p>
         </motion.div>
 

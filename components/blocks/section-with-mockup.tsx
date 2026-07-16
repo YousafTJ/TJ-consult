@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Kicker } from "@/components/ui/Kicker";
 
 interface SectionWithMockupProps {
   title: string | React.ReactNode;
@@ -56,10 +57,7 @@ const SectionWithMockup: React.FC<SectionWithMockupProps> = ({
             className={`flex flex-col items-start gap-4 mt-10 md:mt-0 max-w-[546px] mx-auto md:mx-0 ${textOrderClass}`}
             variants={itemVariants}
           >
-            <div className="inline-flex items-center gap-2 mb-2">
-              <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
-              <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Om mig</span>
-            </div>
+            <Kicker className="mb-2">Om mig</Kicker>
             <h2 className="text-white text-3xl md:text-[40px] font-bold leading-tight md:leading-[53px]">
               {title}
             </h2>

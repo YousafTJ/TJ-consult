@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown, Bot, Code2, Shield, Server } from 'lucide-react'
+import { Menu, X, ChevronDown, Bot, Code2, Server } from 'lucide-react'
 
 const navLinks = [
   { href: '/', label: 'Forside' },
@@ -14,7 +14,6 @@ const navLinks = [
     dropdown: [
       { href: '/services#ai', label: 'AI & Automatisering', icon: Bot },
       { href: '/services#software', label: 'Softwareudvikling', icon: Code2 },
-      { href: '/services#sikkerhed', label: 'IT-Sikkerhed', icon: Shield },
       { href: '/services#infrastruktur', label: 'IT-Infrastruktur', icon: Server },
     ],
   },

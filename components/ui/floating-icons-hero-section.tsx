@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { Kicker } from '@/components/ui/Kicker';
 
 interface IconProps {
   id: number;
@@ -128,10 +129,9 @@ const FloatingIconsHero = React.forwardRef<
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-orange-100 border border-orange-200 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-8"
+          className="mb-8"
         >
-          <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
-          IT-konsulent & AI-specialist · Brøndby Strand, Danmark
+          <Kicker withDot>IT-konsulent & AI-specialist</Kicker>
         </motion.div>
 
         <motion.h1
